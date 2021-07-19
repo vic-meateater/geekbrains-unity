@@ -5,13 +5,13 @@ using UnityEngine;
 public class MouseLook : MonoBehaviour
 {
     //VARIABLES
-    [SerializeField] private float _mouseSens = 100f;
+    [SerializeField] private float _mouseSens => 100f;
     [SerializeField] private Transform _playerBody;
-    float _xRotation = 0f;
+    float _xRotation;
 
     void Start()
     {
-        //Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
