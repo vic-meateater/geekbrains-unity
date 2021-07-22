@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MouseLook : MonoBehaviour
 {
-    //VARIABLES
     [SerializeField] private float _mouseSens => 100f;
     [SerializeField] private Transform _playerBody;
     float _xRotation;

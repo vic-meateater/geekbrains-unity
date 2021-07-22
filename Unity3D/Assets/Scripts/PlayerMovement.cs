@@ -1,24 +1,32 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private CharacterController _controller;
-    [SerializeField] private float _speed;
-    private float _gravity => -9.81f;
-
     [SerializeField] private Transform _groundCheck;
     [SerializeField] private LayerMask _groundMask;
+    private float _gravity => -9.81f;
     private float _groundDistance => 0.4f;
 
     private Animator _animator;
     private Vector3 _velocity;
     private bool _isGrounded;
+    private int _isWalkingHash;
+    private int _velocityHash;
+    
+    private float _acceleration => 0.5f;
+    private float _deceleration => 0.6f;
+    private float _speed = 5.0f;
 
-    void Start()
+
+    private void Awake()
     {
         _animator = GetComponent<Animator>();
+        _isWalkingHash = Animator.StringToHash("isWalking");
+        _velocityHash = Animator.StringToHash("Velocity");      
     }
-    void Update()
+    private void Update()
     {
         PlayerMovements();
     }
@@ -36,24 +44,26 @@ public class PlayerMovement : MonoBehaviour
         _velocity.y += _gravity * Time.deltaTime;
         _controller.Move(_velocity * Time.deltaTime);
 
-        if (move != Vector3.zero)
+        bool runPressed = Input.GetKey(KeyCode.LeftShift);
+        if (move != Vector3.zero && _velocity.z < 0.1f)
         {
-            PlayerWalk();
+            _velocity.z = 0.1f;
         }
-        else if (move == Vector3.zero)
+        if (move != Vector3.zero && _velocity.z < 1.0f && runPressed)
         {
-            PlayerIdle();
+            _velocity.z += Time.deltaTime * _acceleration;
+            _speed += Time.deltaTime * _acceleration * 10;         
         }
-
-    }
-
-    void PlayerWalk()
-    {
-        _animator.SetBool("isWalking", true);
-    }
-
-    void PlayerIdle()
-    {
-        _animator.SetBool("isWalking", false);
+        if (move != Vector3.zero && _velocity.z > 0.1f && !runPressed)
+        {
+            _velocity.z -= Time.deltaTime * _deceleration;
+            _speed -= Time.deltaTime * _deceleration * 10;
+        }
+        if (move == Vector3.zero)
+        {
+            _velocity.z = 0.0f;
+            _speed = 5.0f;
+        }
+        _animator.SetFloat(_velocityHash, _velocity.z);
     }
 }
