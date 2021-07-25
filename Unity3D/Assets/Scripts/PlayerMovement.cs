@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator _animator;
     private Vector3 _velocity;
     private bool _isGrounded;
-    private int _isWalkingHash;
+    private int _isAttackHash;
     private int _velocityHash;
     
     private float _acceleration => 0.5f;
@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         _animator = GetComponent<Animator>();
-        _isWalkingHash = Animator.StringToHash("isWalking");
+        _isAttackHash = Animator.StringToHash("isAttack");
         _velocityHash = Animator.StringToHash("Velocity");      
     }
     private void Update()
@@ -45,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
         _controller.Move(_velocity * Time.deltaTime);
 
         bool runPressed = Input.GetKey(KeyCode.LeftShift);
+
         if (move != Vector3.zero && _velocity.z < 0.1f)
         {
             _velocity.z = 0.1f;
@@ -64,6 +65,11 @@ public class PlayerMovement : MonoBehaviour
             _velocity.z = 0.0f;
             _speed = 5.0f;
         }
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            _animator.SetBool(_isAttackHash, true);
+        }
+
         _animator.SetFloat(_velocityHash, _velocity.z);
     }
 }
