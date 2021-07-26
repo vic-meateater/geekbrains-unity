@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
@@ -12,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator _animator;
     private Vector3 _velocity;
     private bool _isGrounded;
-    private int _isAttackHash;
+    private int _isAttackTriggerHash;
     private int _velocityHash;
     
     private float _acceleration => 0.5f;
@@ -23,12 +24,15 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         _animator = GetComponent<Animator>();
-        _isAttackHash = Animator.StringToHash("isAttack");
-        _velocityHash = Animator.StringToHash("Velocity");      
+        _velocityHash = Animator.StringToHash("Velocity");
+        _isAttackTriggerHash = Animator.StringToHash("isAttackTrigger");
+        _attackLayerHash = Animator.StringToHash("Attack Layer");
     }
     private void Update()
     {
         PlayerMovements();
+        PlayerAttack();
+
     }
     void PlayerMovements()
     {
@@ -53,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
         if (move != Vector3.zero && _velocity.z < 1.0f && runPressed)
         {
             _velocity.z += Time.deltaTime * _acceleration;
-            _speed += Time.deltaTime * _acceleration * 10;         
+            _speed += Time.deltaTime * _acceleration * 10;
         }
         if (move != Vector3.zero && _velocity.z > 0.1f && !runPressed)
         {
@@ -65,11 +69,20 @@ public class PlayerMovement : MonoBehaviour
             _velocity.z = 0.0f;
             _speed = 5.0f;
         }
+        _animator.SetFloat(_velocityHash, _velocity.z);
+    }
+    private void PlayerAttack()
+    {
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
-            _animator.SetBool(_isAttackHash, true);
+            StartCoroutine(Slash());
         }
-
-        _animator.SetFloat(_velocityHash, _velocity.z);
+    }
+    private IEnumerator Slash()
+    {
+        _animator.SetLayerWeight(_animator.GetLayerIndex("Attack Layer"), 1);
+        _animator.SetTrigger(_isAttackTriggerHash);
+        yield return new WaitForSeconds(1.14f);
+        _animator.SetLayerWeight(_animator.GetLayerIndex("Attack Layer"), 0);
     }
 }
