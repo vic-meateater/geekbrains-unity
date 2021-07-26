@@ -26,7 +26,6 @@ public class PlayerMovement : MonoBehaviour
         _animator = GetComponent<Animator>();
         _velocityHash = Animator.StringToHash("Velocity");
         _isAttackTriggerHash = Animator.StringToHash("isAttackTrigger");
-        _attackLayerHash = Animator.StringToHash("Attack Layer");
     }
     private void Update()
     {
@@ -73,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void PlayerAttack()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse1))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             StartCoroutine(Slash());
         }
