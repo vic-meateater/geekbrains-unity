@@ -10,6 +10,7 @@ public class AnimationToRagDoll : MonoBehaviour
         _rbRagDoll = GetComponentsInChildren<Rigidbody>();
         foreach(Rigidbody rb in _rbRagDoll)
         {
+            rb.tag = "Enemy";
             rb.isKinematic = true;
         }
     }
@@ -17,10 +18,20 @@ public class AnimationToRagDoll : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.G)) RagdollActivate();   
+        if (Input.GetKeyDown(KeyCode.G)) RagdollActivate();
     }
 
-    private void RagdollActivate()
+    //Почему-то не работает 
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log(collision);
+        if (collision.gameObject.CompareTag("Weapon"))
+        {
+            Debug.Log(collision.gameObject.tag);
+            RagdollActivate();
+        }
+    }
+    public void RagdollActivate()
     {
         foreach (Rigidbody rb in _rbRagDoll) rb.isKinematic = false;
         GetComponent<Animator>().enabled = false;
