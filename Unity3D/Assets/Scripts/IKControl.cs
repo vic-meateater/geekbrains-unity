@@ -17,8 +17,8 @@ public class IKControl : MonoBehaviour
 
     private void OnAnimatorIK(int layerIndex)
     {
-        var _lookAtObject = Physics.CheckSphere(transform.position, 2, _lookAtLayer);
-        if (_isActive && _lookAtObject)
+        var lookAtObject = Physics.CheckSphere(transform.position, 2, _lookAtLayer);
+        if (_isActive && lookAtObject)
         {
             _animator.SetLookAtWeight(1f);
             _animator.SetLookAtPosition(_lookObj.position);

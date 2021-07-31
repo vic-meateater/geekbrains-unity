@@ -8,6 +8,7 @@ public class PostPropSettings : MonoBehaviour
     private ColorGrading _colorGrading;
 
     private float _saturationValue;
+    private float _scalingTime => 12f;
 
     private void Start()
     {
@@ -23,7 +24,7 @@ public class PostPropSettings : MonoBehaviour
     {
         if(_saturationValue < 0)
         {
-            _colorGrading.saturation.value = _saturationValue += 12f * Time.deltaTime;
+            _colorGrading.saturation.value = _saturationValue += _scalingTime * Time.deltaTime;
         }
     }
     private void SettigsColorGrading()

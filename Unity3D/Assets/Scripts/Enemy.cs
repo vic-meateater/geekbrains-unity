@@ -3,7 +3,6 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private float _health;
-    private bool _firstDeath;
 
     public void TakeDamage(int damage, RaycastHit hit, Camera fpsCam, float attackForce)
     {

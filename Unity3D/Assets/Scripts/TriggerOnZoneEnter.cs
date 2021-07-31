@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class TriggerOnZoneEnter : MonoBehaviour
 {
-    [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioClip _audioClip;
     [SerializeField] private Material _material;
 

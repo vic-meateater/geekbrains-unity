@@ -4,7 +4,7 @@ public class AnimationToRagDoll : MonoBehaviour
 {
     private Rigidbody[] _rbRagDoll;
 
-    void Start()
+    void Awake()
     {
         _rbRagDoll = GetComponentsInChildren<Rigidbody>();
         foreach(Rigidbody rb in _rbRagDoll)
@@ -17,17 +17,6 @@ public class AnimationToRagDoll : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.G)) RagdollActivate();
-    }
-
-    //Почему-то не работает 
-    private void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log(collision);
-        if (collision.gameObject.CompareTag("Weapon"))
-        {
-            Debug.Log(collision.gameObject.tag);
-            RagdollActivate();
-        }
     }
     public void RagdollActivate()
     {
