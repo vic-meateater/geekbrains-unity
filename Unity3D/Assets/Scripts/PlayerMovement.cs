@@ -81,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
     {
         _animator.SetLayerWeight(_animator.GetLayerIndex("Attack Layer"), 1);
         _animator.SetTrigger(_isAttackTriggerHash);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         _animator.SetLayerWeight(_animator.GetLayerIndex("Attack Layer"), 0);
     }
 }

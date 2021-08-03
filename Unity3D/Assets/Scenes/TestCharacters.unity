@@ -309,9 +309,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e2ca8df54508bb40bb9abfee0ead171, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isActive: 0
+  _isActive: 1
   _lookObj: {fileID: 987702060}
   _takeObj: {fileID: 6229006254449718228}
+  _lookAtLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &487508300
 GameObject:
   m_ObjectHideFlags: 0
@@ -547,6 +550,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_Goblet_01
       objectReference: {fileID: 0}
+    - target: {fileID: 1855939252077874, guid: bdf601b513a307d4b866f26e11993700, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4454899777050188, guid: bdf601b513a307d4b866f26e11993700, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -651,7 +658,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1411244843
 Transform:
   m_ObjectHideFlags: 0
@@ -660,7 +667,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1411244842}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.019, y: -0.003, z: 0.312}
+  m_LocalPosition: {x: -0.0038, y: 0.0201, z: 0.3594}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6229006255002611864}
@@ -674,12 +681,12 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1411244842}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.1
-  m_Height: 0.64
+  m_Radius: 0.05
+  m_Height: 0.36
   m_Direction: 2
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 6.042654e-10, y: -0.0000000031671215, z: -0.012029963}
 --- !u!137 &173825876247897335
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -2806,6 +2813,7 @@ GameObject:
   - component: {fileID: 261204756799385707}
   - component: {fileID: 205493055116658443}
   - component: {fileID: 256008130895016238}
+  - component: {fileID: 256008130895016239}
   m_Layer: 0
   m_Name: Enemy Skeleton
   m_TagString: Enemy
@@ -2823,6 +2831,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cc2e0f8a022bb4887a1439ec8ca46d76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &256008130895016239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256008130895016237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbdbb772b2757f40b5a88180efaf11d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &256017667375123245
@@ -5053,6 +5073,7 @@ GameObject:
   - component: {fileID: 6229006255002611864}
   - component: {fileID: 6229006255003381944}
   - component: {fileID: 6229006255004381816}
+  - component: {fileID: 6229006255002381497}
   m_Layer: 7
   m_Name: Sword_12
   m_TagString: Weapon
@@ -5060,6 +5081,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6229006255002381497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6229006255002381496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eead713731340a4cac2a110a05aa5cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 20
+  _range: 0.9
 --- !u!4 &6229006255002611864
 Transform:
   m_ObjectHideFlags: 0
@@ -5067,14 +5102,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6229006255002381496}
-  m_LocalRotation: {x: 0.029924281, y: 0.0066456534, z: -0.99859565, w: 0.04321109}
-  m_LocalPosition: {x: -0.005944976, y: -0.0013741008, z: 0.0010828405}
+  m_LocalRotation: {x: -0.0006186811, y: -0.0702703, z: -0.99713886, w: 0.027856587}
+  m_LocalPosition: {x: -0.0023, y: 0.0015, z: 0.0199}
   m_LocalScale: {x: 0.6666665, y: 0.6666673, z: 0.66666764}
   m_Children:
   - {fileID: 1411244843}
   m_Father: {fileID: 6229006254449718172}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -8.058, y: -0.155, z: -176.789}
 --- !u!33 &6229006255003381944
 MeshFilter:
   m_ObjectHideFlags: 0
