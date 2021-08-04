@@ -7,13 +7,13 @@ public class SwordAttack : MonoBehaviour
     [SerializeField] private float _range;
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
-        {
-            AttackSword();
-        }
+        //if (Input.GetButtonDown("Fire1"))
+        //{
+        //    AttackSword();
+        //}
     }
 
-    private void AttackSword()
+    public void Slash()
     {
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, _range))
