@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Animator))]
 public class PlayerMovement : MonoBehaviour
@@ -7,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private CharacterController _controller;
     [SerializeField] private Transform _groundCheck;
     [SerializeField] private LayerMask _groundMask;
+    [SerializeField] private Transform _startPosition;
 
     private float _gravity => -9.81f;
     private float _groundDistance => 0.4f;
@@ -45,6 +47,10 @@ public class PlayerMovement : MonoBehaviour
         _isGrounded = Physics.CheckSphere(_groundCheck.position, _groundDistance, _groundMask);
         if (_isGrounded && _velocity.y < 0)
             _velocity.y = -2f;
+        if (_velocity.y < -10f)
+        {
+            SceneManager.LoadScene("World");
+        }
 
         var moveX = Input.GetAxis("Horizontal");
         var moveZ = Input.GetAxis("Vertical");

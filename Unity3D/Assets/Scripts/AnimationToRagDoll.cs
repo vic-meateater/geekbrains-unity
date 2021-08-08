@@ -14,10 +14,6 @@ public class AnimationToRagDoll : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.G)) RagdollActivate();
-    }
     public void RagdollActivate()
     {
         foreach (Rigidbody rb in _rbRagDoll) rb.isKinematic = false;
