@@ -1,12 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private LayerMask _layerMask;
     [SerializeField] private float _speed;
-    private float _mouseSens => 100f;
     private int _animantorHashX;
     private int _animantorHashZ;
 
@@ -55,14 +52,6 @@ public class PlayerMovement : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if(Physics.Raycast(ray, out var hit, Mathf.Infinity, _layerMask))
         {
-            ////var destination = hit.point;
-            ////destination.y = destination - transform.position
-            //var _destination = hit.point;
-            //_destination.y = _destination.y - transform.position.y;
-            //Vector3 _direction = _destination - transform.position;
-            ////_direction.y = 0f;
-            //_direction.Normalize();
-            //transform.rotation = Quaternion.LookRotation(_direction, Vector3.up);
             var _direction = hit.point - transform.position;
             _direction.y = 0f;
             _direction.Normalize();
