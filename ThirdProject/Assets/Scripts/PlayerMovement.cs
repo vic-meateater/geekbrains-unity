@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     //void Awake() => _animator = GetComponent<Animator>();
     private void Awake()
     {
-        _animator = GetComponent<Animator>();
+        _animator = GetComponentInChildren<Animator>();
         _animantorHashX = Animator.StringToHash("VelocityX");
         _animantorHashZ = Animator.StringToHash("VelocityZ");
 
