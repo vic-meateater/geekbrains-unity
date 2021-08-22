@@ -2,8 +2,8 @@ using UnityEngine;
 
 namespace BananaMan
 {
-    public class Zombie : MonoBehaviour
+    public class Zombie : BaseCharacter
     {
-
+                
     }
 }

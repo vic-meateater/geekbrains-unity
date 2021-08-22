@@ -11,8 +11,6 @@ namespace BananaMan
 
         Animator _animator;
 
-
-
         //void Awake() => _animator = GetComponent<Animator>();
         private void Awake()
         {
