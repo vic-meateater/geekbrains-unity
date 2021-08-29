@@ -37,6 +37,10 @@ namespace BananaMan
 
             _animator.SetFloat(_animatorHashZ, velocityZ, 0.1f, Time.deltaTime);
             _animator.SetFloat(_animatorHashX, velocityX, 0.1f, Time.deltaTime);
+            if (movement.magnitude == 0 && Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                _animator.SetTrigger("IdleFire");
+            }
         }
 
         public void AimTowardMouse()
@@ -44,16 +48,17 @@ namespace BananaMan
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if(Physics.Raycast(ray, out var hit, Mathf.Infinity, _layerMask))
             {
-                var _direction = hit.point - transform.position;
-                _direction.y = 0f;
-                _direction.Normalize();
-                transform.forward = _direction;
+                var direction = hit.point - transform.position;
+                direction.y = 0f;
+                direction.Normalize();
+                transform.forward = direction;
             }
         }
 
-        public void Shoot()
+        protected void Fire()
         {
-            Instantiate(_bulletPref, _bulletStartPosition.position, transform.rotation);
+            var bulletInstantiate = Instantiate(_bulletPref, _bulletStartPosition.position, transform.rotation);
+            bulletInstantiate.GetComponent<RifleBullet>().Init();
         }
     }
 }

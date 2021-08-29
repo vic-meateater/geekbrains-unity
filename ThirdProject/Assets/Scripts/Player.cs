@@ -9,7 +9,7 @@ namespace BananaMan
             MovePlayer();
             AimTowardMouse();
             if(Input.GetKeyDown(KeyCode.Mouse0))
-                Shoot();
+                Fire();
         }
     }
 }
