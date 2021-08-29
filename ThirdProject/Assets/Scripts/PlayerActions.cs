@@ -2,30 +2,22 @@ using UnityEngine;
 
 namespace BananaMan
 {
-    public class PlayerMovement : MonoBehaviour
+    public abstract class PlayerActions : BaseCharacter
     {
         [SerializeField] private LayerMask _layerMask;
-        [SerializeField] private float _speed;
-        private int _animantorHashX;
-        private int _animantorHashZ;
+        [SerializeField] private GameObject _bulletPref;
+        [SerializeField] private Transform _bulletStartPosition;
+        private int _animatorHashX;
+        private int _animatorHashZ;
 
         Animator _animator;
-
-        //void Awake() => _animator = GetComponent<Animator>();
+        private void Start() => _animator = GetComponentInChildren<Animator>();
         private void Awake()
         {
-            _animator = GetComponentInChildren<Animator>();
-            _animantorHashX = Animator.StringToHash("VelocityX");
-            _animantorHashZ = Animator.StringToHash("VelocityZ");
-
+            _animatorHashX = Animator.StringToHash("VelocityX");
+            _animatorHashZ = Animator.StringToHash("VelocityZ");
         }
-        private void Update()
-        {
-            MovePlayer();
-            AimTowardMouse();
-        }
-
-        private void MovePlayer()
+        public void MovePlayer()
         {
             float moveX = Input.GetAxis("Horizontal");
             float moveZ = Input.GetAxis("Vertical");
@@ -36,18 +28,18 @@ namespace BananaMan
             if(movement.magnitude > 0)
             {
                 movement.Normalize();
-                movement *= _speed * Time.deltaTime;
+                movement *= _movementSpeed * Time.deltaTime;
                 transform.Translate(movement, Space.World);
             }
 
             float velocityZ = Vector3.Dot(movement.normalized, transform.forward);
             float velocityX = Vector3.Dot(movement.normalized, transform.right);
 
-            _animator.SetFloat(_animantorHashZ, velocityZ, 0.1f, Time.deltaTime);
-            _animator.SetFloat(_animantorHashX, velocityX, 0.1f, Time.deltaTime);
+            _animator.SetFloat(_animatorHashZ, velocityZ, 0.1f, Time.deltaTime);
+            _animator.SetFloat(_animatorHashX, velocityX, 0.1f, Time.deltaTime);
         }
 
-        private void AimTowardMouse()
+        public void AimTowardMouse()
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if(Physics.Raycast(ray, out var hit, Mathf.Infinity, _layerMask))
@@ -57,6 +49,11 @@ namespace BananaMan
                 _direction.Normalize();
                 transform.forward = _direction;
             }
+        }
+
+        public void Shoot()
+        {
+            Instantiate(_bulletPref, _bulletStartPosition.position, transform.rotation);
         }
     }
 }

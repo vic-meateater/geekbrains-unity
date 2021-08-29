@@ -2,8 +2,20 @@ using UnityEngine;
 
 namespace BananaMan
 {
-    public abstract class BaseCharacter : MonoBehaviour
+    public abstract class BaseCharacter : MonoBehaviour, ITakeDamage
     {
-        public float _speed;
+        [SerializeField] private int _maxHealth = 30;
+        [SerializeField] protected float _movementSpeed = 3f;
+        private int _currentHealth;
+
+        private void Start()
+        {
+            _currentHealth = _maxHealth;
+        }
+
+        public void TakeDamage(int damage)
+        {
+            _currentHealth -= damage;
+        }
     }
 }
