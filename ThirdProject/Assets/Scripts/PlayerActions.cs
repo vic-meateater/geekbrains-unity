@@ -10,8 +10,12 @@ namespace BananaMan
         private int _animatorHashX;
         private int _animatorHashZ;
 
-        Animator _animator;
-        private void Start() => _animator = GetComponentInChildren<Animator>();
+        
+//        protected override void Start()
+//        { 
+//            base.Start();
+//            _animator = GetComponentInChildren<Animator>();
+//        }
         private void Awake()
         {
             _animatorHashX = Animator.StringToHash("VelocityX");
@@ -37,10 +41,6 @@ namespace BananaMan
 
             _animator.SetFloat(_animatorHashZ, velocityZ, 0.1f, Time.deltaTime);
             _animator.SetFloat(_animatorHashX, velocityX, 0.1f, Time.deltaTime);
-            if (movement.magnitude == 0 && Input.GetKeyDown(KeyCode.Mouse0))
-            {
-                _animator.SetTrigger("IdleFire");
-            }
         }
 
         public void AimTowardMouse()
