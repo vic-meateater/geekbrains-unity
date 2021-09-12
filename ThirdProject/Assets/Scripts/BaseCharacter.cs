@@ -6,19 +6,19 @@ namespace BananaMan
     {
         [SerializeField] private int _maxHealth = 30;
         [SerializeField] protected float _movementSpeed;
-        protected int _currentHealth;
+        protected int CurrentHealth;
         
         public Animator _animator;
         
         protected virtual void Start()
         {
-            _currentHealth = _maxHealth;
+            CurrentHealth = _maxHealth;
             _animator = GetComponentInChildren<Animator>();
         }
 
         public void TakeDamage(int damage)
         {
-            _currentHealth -= damage;
+            CurrentHealth -= damage;
         }
     }
 }

@@ -14,6 +14,12 @@ namespace BananaMan
             _material = GetComponent<Renderer>().sharedMaterial;
             _flyHeight = random.Range(2f, 6f);
         }
+
+        private void Update()
+        {
+            Fly();
+            Flicker();
+        }
         protected override void Interaction()
         {
             //

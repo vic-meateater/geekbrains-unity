@@ -23,8 +23,8 @@ namespace BananaMan
         }
         public void MovePlayer()
         {
-            float moveX = Input.GetAxis("Horizontal");
-            float moveZ = Input.GetAxis("Vertical");
+            var moveX = Input.GetAxis("Horizontal");
+            var moveZ = Input.GetAxis("Vertical");
 
 
             Vector3 movement = new Vector3(moveX, 0f, moveZ);
@@ -36,8 +36,8 @@ namespace BananaMan
                 transform.Translate(movement, Space.World);
             }
 
-            float velocityZ = Vector3.Dot(movement.normalized, transform.forward);
-            float velocityX = Vector3.Dot(movement.normalized, transform.right);
+            var velocityZ = Vector3.Dot(movement.normalized, transform.forward);
+            var velocityX = Vector3.Dot(movement.normalized, transform.right);
 
             _animator.SetFloat(_animatorHashZ, velocityZ, 0.1f, Time.deltaTime);
             _animator.SetFloat(_animatorHashX, velocityX, 0.1f, Time.deltaTime);

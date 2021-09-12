@@ -10,7 +10,7 @@ namespace BananaMan
 
         protected override void Die()
         {
-            if (_currentHealth <= 0)
+            if (CurrentHealth <= 0)
             {
                 base.Die();
                 _animator.SetTrigger("DieTrigger");
