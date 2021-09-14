@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace BananaMan
 {
-    public class RifleBullet : BaseBullet
+    public sealed class RifleBullet : BaseBullet
     {
         public void Init()
         {
