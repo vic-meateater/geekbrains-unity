@@ -1,28 +1,32 @@
 using System;
 using UnityEngine;
-using random = UnityEngine.Random;
+using Random = UnityEngine.Random;
 
 namespace BananaMan
 {
     public sealed class GoodBonus : InteractiveObject, IFly, IFlicker
     {
+        private DisplayBonuses _displayBonuses;
         private Material _material;
         private float _flyHeight;
 
         private void Awake()
         {
-            _material = GetComponent<Renderer>().sharedMaterial;
-            _flyHeight = random.Range(2f, 6f);
+            //_material = GetComponent<Renderer>().sharedMaterial;
+            _material = GetComponent<Renderer>().material;
+            _flyHeight = Random.Range(1.0f, 5.0f);
+            _displayBonuses = new DisplayBonuses();
+            Debug.Log("GoodBonus Awaking");
         }
 
-        private void Update()
-        {
-            Fly();
-            Flicker();
-        }
+        // private void Update()
+        // {
+        //     Fly();
+        //     Flicker();
+        // }
         protected override void Interaction()
         {
-            //
+            _displayBonuses.Display(5);
         }
         public void Fly()
         {
@@ -38,7 +42,7 @@ namespace BananaMan
                                         Mathf.PingPong(Time.time, 1f));
         }
 
-
+ 
 
     }
 }
