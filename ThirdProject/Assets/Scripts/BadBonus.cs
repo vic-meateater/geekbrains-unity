@@ -5,7 +5,7 @@ using random = UnityEngine.Random;
 namespace BananaMan
 {
 
-    public class BadBonus : InteractiveObject, IFly, IRotation
+    public class BadBonus : InteractiveObject, IFly, IRotation, ICloneable
     {
 
         private float _flyHeight;
@@ -30,6 +30,12 @@ namespace BananaMan
         public void Rotation()
         {
             transform.Rotate(Vector3.up * (Time.deltaTime * _speedRotation), Space.World);
+        }
+
+        public object Clone()
+        {
+            var result = Instantiate(gameObject, transform.position, transform.rotation, transform.parent);
+            return result;
         }
     }
 }

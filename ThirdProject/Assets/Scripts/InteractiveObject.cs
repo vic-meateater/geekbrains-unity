@@ -27,7 +27,6 @@ namespace BananaMan
             {
                 return;
             }
-            Debug.Log("Enter to Trigger");
             Interaction();
             Destroy(gameObject);
         }

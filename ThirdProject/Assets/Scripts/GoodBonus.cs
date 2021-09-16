@@ -16,7 +16,6 @@ namespace BananaMan
             _material = GetComponent<Renderer>().material;
             _flyHeight = Random.Range(1.0f, 5.0f);
             _displayBonuses = new DisplayBonuses();
-            Debug.Log("GoodBonus Awaking");
         }
 
         // private void Update()
