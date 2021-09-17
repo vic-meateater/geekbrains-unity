@@ -11,11 +11,6 @@ namespace BananaMan
         private int _animatorHashZ;
 
         
-//        protected override void Start()
-//        { 
-//            base.Start();
-//            _animator = GetComponentInChildren<Animator>();
-//        }
         private void Awake()
         {
             _animatorHashX = Animator.StringToHash("VelocityX");
@@ -32,7 +27,7 @@ namespace BananaMan
             if(movement.magnitude > 0)
             {
                 movement.Normalize();
-                movement *= _movementSpeed * Time.deltaTime;
+                movement *= movementSpeed * Time.deltaTime;
                 transform.Translate(movement, Space.World);
             }
 
@@ -59,6 +54,11 @@ namespace BananaMan
         {
             var bulletInstantiate = Instantiate(_bulletPref, _bulletStartPosition.position, transform.rotation);
             bulletInstantiate.GetComponent<RifleBullet>().Init();
+        }
+
+        public void SpeedUp(int value)
+        {
+            movementSpeed += value;
         }
     }
 }

@@ -15,9 +15,9 @@ namespace BananaMan
 
         public void Action()
         {
-            if (TryGetComponent(out Renderer renderer))
+            if (TryGetComponent(out Renderer r))
             {
-                renderer.material.color = Random.ColorHSV();
+                r.material.color = Random.ColorHSV();
             }
         }
 

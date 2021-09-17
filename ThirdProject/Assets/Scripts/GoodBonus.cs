@@ -6,26 +6,23 @@ namespace BananaMan
 {
     public sealed class GoodBonus : InteractiveObject, IFly, IFlicker
     {
-        private DisplayBonuses _displayBonuses;
+        private Player _player;
         private Material _material;
         private float _flyHeight;
 
         private void Awake()
         {
-            //_material = GetComponent<Renderer>().sharedMaterial;
-            _material = GetComponent<Renderer>().material;
+            _material = GetComponent<Renderer>().sharedMaterial;
+            //_material = GetComponent<Renderer>().material;
             _flyHeight = Random.Range(1.0f, 5.0f);
-            _displayBonuses = new DisplayBonuses();
+            _player = FindObjectOfType<Player>();
+            
         }
 
-        // private void Update()
-        // {
-        //     Fly();
-        //     Flicker();
-        // }
         protected override void Interaction()
         {
-            _displayBonuses.Display(5);
+            _player.SpeedUp(5);
+
         }
         public void Fly()
         {
