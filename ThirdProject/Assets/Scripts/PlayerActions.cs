@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace BananaMan
@@ -10,7 +11,6 @@ namespace BananaMan
         private int _animatorHashX;
         private int _animatorHashZ;
 
-        
         private void Awake()
         {
             _animatorHashX = Animator.StringToHash("VelocityX");
@@ -58,8 +58,15 @@ namespace BananaMan
 
         public void SpeedUp(int value)
         {
-            movementSpeed += value;
+            StartCoroutine(SpeedUpTimer(value));
         }
+            IEnumerator SpeedUpTimer(int timer)
+            {
+                movementSpeed += timer;
+                yield return new WaitForSeconds(timer);
+                movementSpeed -= timer;   
+            }
+
     }
 }
 

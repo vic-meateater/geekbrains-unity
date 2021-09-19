@@ -22,6 +22,7 @@ namespace BananaMan
         protected override void Interaction()
         {
             _player.SpeedUp(5);
+            Debug.Log("1");
 
         }
         public void Fly()
