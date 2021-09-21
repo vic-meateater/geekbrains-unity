@@ -1,16 +1,30 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace BananaMan
 {
     public class GameController : MonoBehaviour
     {
-        private InteractiveObject[] _interactiveObjects;
+        private List<InteractiveObject> _interactiveObjects;
 
         private void Awake()
         {
-            _interactiveObjects = FindObjectsOfType<InteractiveObject>();
+            _interactiveObjects = FindObjectsOfType<InteractiveObject>().ToList();;
+            var displayBonuses = new DisplayBonuses();
+            foreach (var interactiveObject in _interactiveObjects)
+            {
+                interactiveObject.Initialization(displayBonuses);
+                interactiveObject.OnDestroyChange += InteractiveObjectOnOnDestroyChange;
+            }
         }
-
+        
+        private void InteractiveObjectOnOnDestroyChange(InteractiveObject value)
+        {
+            value.OnDestroyChange -= InteractiveObjectOnOnDestroyChange;
+            _interactiveObjects.Remove(value);
+        }
+        
         private void Update()
         {
             foreach (var interactiveObject in _interactiveObjects)

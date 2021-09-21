@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using random = UnityEngine.Random;
 
 namespace BananaMan
@@ -10,15 +11,18 @@ namespace BananaMan
 
         private float _flyHeight;
         private float _speedRotation;
+        private Player _player;
 
         private void Awake()
         {
             _flyHeight = random.Range(1.0f, 5.0f);
             _speedRotation = random.Range(10.0f, 50.0f);
+            _player = FindObjectOfType<Player>();
         }
         protected override void Interaction()
         {
-            //
+            Destroy(_player.gameObject);
+            SceneManager.LoadScene("SampleScene");
         }
         public void Fly()
         {

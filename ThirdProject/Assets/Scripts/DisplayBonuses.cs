@@ -2,9 +2,10 @@ using UnityEngine;
 using UnityEngine.UI;
 namespace BananaMan
 {
-    public sealed class DisplayBonuses
+    public sealed class DisplayBonuses: IView
     {
         private Text _text;
+        private int _point;
 
         public DisplayBonuses()
         {
@@ -13,7 +14,8 @@ namespace BananaMan
 
         public void Display(int value)
         {
-            _text.text = $"Вы набрали {value} бонусов.";
+            _point += value;
+            _text.text = $"Вы набрали {_point} бонусов.";
         }
     }
 }
