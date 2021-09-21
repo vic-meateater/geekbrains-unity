@@ -1,6 +1,6 @@
 namespace BananaMan
 {
-    public interface IInteractable
+    public interface IInteractable: IAction, IInitialization
     {
         bool IsInteractable { get; }
     }

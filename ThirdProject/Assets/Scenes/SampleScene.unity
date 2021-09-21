@@ -590,7 +590,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.3333334, y: 1}
+    m_SensorSize: {x: 1.7787325, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1467,6 +1467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb54384c8667d43b0a7091f7d9ad0833, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Point: 1
 --- !u!135 &227310551
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1779,6 +1780,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb54384c8667d43b0a7091f7d9ad0833, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Point: 1
 --- !u!135 &290176413
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2657,6 +2659,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb54384c8667d43b0a7091f7d9ad0833, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Point: 2
 --- !u!135 &691483967
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4502,6 +4505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb54384c8667d43b0a7091f7d9ad0833, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Point: 3
 --- !u!135 &1061527115
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6158,7 +6162,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-24830
+  m_Name: pb_Mesh17610
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7128,7 +7132,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013555364002, guid: 5142a683d65bbf84abea6f07db9099c7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.9109497
+      value: 4.98
       objectReference: {fileID: 0}
     - target: {fileID: 4000013555364002, guid: 5142a683d65bbf84abea6f07db9099c7, type: 3}
       propertyPath: m_LocalRotation.w
