@@ -1,0 +1,903 @@
+fileFormatVersion: 2
+guid: 0d6373858f853604b960cf84b7d3dfbf
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      74: -6257440219318784398
+    second: Z_Idle
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: "\nClip 'ZombieFree@animation' has import animation
+      warnings that might lower retargeting quality:\nNote: Activate translation
+      DOF on avatar to improve retargeting quality.\n\t'Base HumanRibcage' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n"
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 1
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Z_Idle
+      takeName: ZombieFree@animation
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 80
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human:
+    - boneName: Base HumanPelvis
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanLLegThigh
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanRThigh
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanLLegCalf
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanRCalf
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanLLegFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanRFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanSpine1
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanSpine2
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanNeck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanHead
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanLArmCollarbone
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanRArmCollarbone
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanLArmUpperarm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanRArmUpperarm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanLArmForearm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanRArmForearm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanLArmPalm
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanRArmPalm
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanLLegDigit11
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanRDigit11
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanLEye
+      humanName: LeftEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanHeadREye
+      humanName: RightEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanHeadJaw
+      humanName: Jaw
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanLArmDigit11
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanLArmDigit12
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanLArmDigit21
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanLArmDigit22
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanLArmDigit23
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanLArmDigit31
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanLArmDigit32
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanLArmDigit33
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanLArmDigit41
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanLArmDigit42
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanLArmDigit43
+      humanName: Left Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanLArmDigit51
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanLArmDigit52
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanLArmDigit53
+      humanName: Left Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanRArmDigit11
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanRArmDigit12
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanRArmDigit21
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanRArmDigit22
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanRArmDigit23
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanRArmDigit31
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanRArmDigit32
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanRArmDigit33
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanRArmDigit41
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanRArmDigit42
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanRArmDigit43
+      humanName: Right Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanRArmDigit51
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanRArmDigit52
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanRArmDigit53
+      humanName: Right Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Zombie@Z_Idle(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Z_Body
+      parentName: Zombie@Z_Idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Z_L_Forearm
+      parentName: Zombie@Z_Idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Z_L_ArmPalm
+      parentName: Zombie@Z_Idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Z_L_Upperarm
+      parentName: Zombie@Z_Idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Z_Head
+      parentName: Zombie@Z_Idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Z_L_LegCalf
+      parentName: Zombie@Z_Idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Z_L_LegThigh
+      parentName: Zombie@Z_Idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Z_R_LegCalf
+      parentName: Zombie@Z_Idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Z_R_LegThigh
+      parentName: Zombie@Z_Idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Z_BodyTop
+      parentName: Zombie@Z_Idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Z_R_Upperarm
+      parentName: Zombie@Z_Idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Z_R_Forearm
+      parentName: Zombie@Z_Idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Z_R_ArmPalm
+      parentName: Zombie@Z_Idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Z_Hip
+      parentName: Zombie@Z_Idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base HumanPelvis
+      parentName: Zombie@Z_Idle(Clone)
+      position: {x: 0.00000004273747, y: 0.87985283, z: -0.050017122}
+      rotation: {x: 0.49912703, y: -0.5008716, z: -0.4991269, w: 0.5008715}
+      scale: {x: 1.0000004, y: 1.0000005, z: 1.0000001}
+    - name: Base HumanLLegThigh
+      parentName: Base HumanPelvis
+      position: {x: -0.016426696, y: 0.044787377, z: 0.083920985}
+      rotation: {x: 0.007827849, y: 0.9974234, z: -0.0074185887, w: 0.07092426}
+      scale: {x: 0.99999934, y: 1, z: 0.9999998}
+    - name: Base HumanLLegCalf
+      parentName: Base HumanLLegThigh
+      position: {x: -0.3929393, y: -0.0000016975403, z: 0.0000003814697}
+      rotation: {x: -0.016677078, y: 0.0019710362, z: 0.10490551, w: 0.9943405}
+      scale: {x: 1.0000006, y: 1.0000002, z: 1.0000002}
+    - name: Base HumanLLegFoot
+      parentName: Base HumanLLegCalf
+      position: {x: -0.4370029, y: -0.0000000047683715, z: 0.000000114440915}
+      rotation: {x: -0.10917647, y: 0.014670098, z: -0.6967415, w: 0.70881355}
+      scale: {x: 1.0000001, y: 1, z: 1.0000002}
+    - name: Base HumanLLegDigit11
+      parentName: Base HumanLLegFoot
+      position: {x: -0.17728779, y: -0.03313414, z: 0.005252113}
+      rotation: {x: -0.0042696, y: -0.039423287, z: -0.111624874, w: 0.992959}
+      scale: {x: 1.0000001, y: 0.9999999, z: 1.0000004}
+    - name: Base HumanRThigh
+      parentName: Base HumanPelvis
+      position: {x: -0.016426696, y: 0.044787377, z: -0.083920926}
+      rotation: {x: 0.007838294, y: 0.9974244, z: 0.007279992, w: -0.07092345}
+      scale: {x: 1.0000007, y: 1.0000011, z: 1.0000006}
+    - name: Base HumanRCalf
+      parentName: Base HumanRThigh
+      position: {x: -0.39293957, y: -0.0000017046927, z: -0.0000003814697}
+      rotation: {x: 0.016682891, y: -0.0019304603, z: 0.104878455, w: 0.9943433}
+      scale: {x: 1.0000007, y: 1.0000006, z: 1.0000004}
+    - name: Base HumanRFoot
+      parentName: Base HumanRCalf
+      position: {x: -0.43699238, y: 0, z: 0}
+      rotation: {x: 0.10907391, y: -0.014782149, z: -0.69674367, w: 0.70882493}
+      scale: {x: 1.0000005, y: 0.9999997, z: 1.0000001}
+    - name: Base HumanRDigit11
+      parentName: Base HumanRFoot
+      position: {x: -0.1772878, y: -0.03313413, z: -0.00525198}
+      rotation: {x: 0.0042678933, y: 0.039433636, z: -0.11161156, w: 0.9929601}
+      scale: {x: 1.0000004, y: 0.9999996, z: 1.0000005}
+    - name: Base HumanSpine1
+      parentName: Base HumanPelvis
+      position: {x: -0.043604277, y: -0.0033362007, z: -0.00000000834465}
+      rotation: {x: -0.000000044703484, y: -0.000000014901161, z: -0.114465356, w: 0.9934273}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000002}
+    - name: Base HumanSpine2
+      parentName: Base HumanSpine1
+      position: {x: -0.23331161, y: 0, z: -2.9802322e-10}
+      rotation: {x: -0.000000016806899, y: 0.000000033793786, z: 0.19929293, w: 0.97994}
+      scale: {x: 1.0000005, y: 1.0000004, z: 1.0000005}
+    - name: Base HumanRibcage
+      parentName: Base HumanSpine2
+      position: {x: -0.3590064, y: -0.000000019073486, z: 2.9802322e-10}
+      rotation: {x: 0.000000062214, y: -5.90461e-12, z: -0.087551825, w: 0.99616003}
+      scale: {x: 1.0000005, y: 1.0000008, z: 1.0000006}
+    - name: Base HumanNeck
+      parentName: Base HumanRibcage
+      position: {x: -0.00075775146, y: -0.0033361912, z: -0.000000006556511}
+      rotation: {x: 0.00000000683245, y: -0.00000005962503, z: -0.20522943, w: 0.97871387}
+      scale: {x: 1.0000001, y: 1.0000007, z: 1.0000006}
+    - name: Base HumanHead
+      parentName: Base HumanNeck
+      position: {x: -0.13291748, y: -0.000000038146972, z: 0}
+      rotation: {x: -0.00000000683245, y: 0.00000005962503, z: 0.20522943, w: 0.97871387}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000004}
+    - name: Base HumanHeadLEyelid
+      parentName: Base HumanHead
+      position: {x: -0.053126983, y: 0.13199674, z: 0.033060458}
+      rotation: {x: -0.00000001521835, y: -0.000000032860477, z: -0.000000029802322, w: 1}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1}
+    - name: Base HumanHeadREyelid
+      parentName: Base HumanHead
+      position: {x: -0.053127136, y: 0.13199669, z: -0.033060458}
+      rotation: {x: -0.00000001521835, y: -0.000000032860477, z: -0.000000029802322, w: 1}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1}
+    - name: Base HumanHeadREye
+      parentName: Base HumanHead
+      position: {x: -0.048573304, y: 0.10121527, z: -0.0333743}
+      rotation: {x: -0.00000001521835, y: -0.000000032860477, z: -0.000000029802322, w: 1}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1}
+    - name: Base HumanLEye
+      parentName: Base HumanHead
+      position: {x: -0.048573304, y: 0.10121527, z: 0.033374306}
+      rotation: {x: -0.00000001521835, y: -0.000000032860477, z: -0.000000029802322, w: 1}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1}
+    - name: Base HumanHeadJaw
+      parentName: Base HumanHead
+      position: {x: 0.012398529, y: 0.050367877, z: -0.000000006556511}
+      rotation: {x: -0.000000012125959, y: 0.00000017603104, z: 0.8397789, w: -0.5429285}
+      scale: {x: 0.9999998, y: 1.000002, z: 1.0000006}
+    - name: Base HumanLArmCollarbone
+      parentName: Base HumanRibcage
+      position: {x: 0.0231958, y: 0.019336939, z: 0.053925898}
+      rotation: {x: 0.012361348, y: 0.75377846, z: 0.18247502, w: 0.631164}
+      scale: {x: 0.99999887, y: 1.0000005, z: 1.0000011}
+    - name: Base HumanLArmUpperarm
+      parentName: Base HumanLArmCollarbone
+      position: {x: -0.13715954, y: 0, z: 0}
+      rotation: {x: 0.1604478, y: -0.06437452, z: -0.12892245, w: 0.9764689}
+      scale: {x: 1.0000021, y: 1.0000036, z: 1.0000024}
+    - name: Base HumanLArmForearm
+      parentName: Base HumanLArmUpperarm
+      position: {x: -0.2657412, y: -0.000000019073486, z: 0}
+      rotation: {x: -0.0035306504, y: -0.03332568, z: -0.029157206, w: 0.999013}
+      scale: {x: 1.0000002, y: 1.0000008, z: 1.0000004}
+    - name: Base HumanLArmPalm
+      parentName: Base HumanLArmForearm
+      position: {x: -0.27302435, y: 0, z: 0}
+      rotation: {x: -0.8217608, y: 0.04393468, z: 0.08690679, w: 0.56145}
+      scale: {x: 0.99999875, y: 1.0000037, z: 0.99999684}
+    - name: Base HumanLArmDigit11
+      parentName: Base HumanLArmPalm
+      position: {x: -0.05025749, y: -0.021261368, z: 0.039970472}
+      rotation: {x: 0.049683787, y: 0.36717495, z: 0.16203924, w: 0.9145805}
+      scale: {x: 0.9999969, y: 1.0000005, z: 1.000003}
+    - name: Base HumanLArmDigit12
+      parentName: Base HumanLArmDigit11
+      position: {x: -0.061692428, y: 0, z: 0}
+      rotation: {x: -0.016617035, y: -0.24742945, z: -0.005353028, w: 0.96874857}
+      scale: {x: 0.99999666, y: 0.9999983, z: 1.000004}
+    - name: Base HumanLArmDigit21
+      parentName: Base HumanLArmPalm
+      position: {x: -0.13359638, y: -0.0033725738, z: 0.041003264}
+      rotation: {x: -0.03090145, y: 0.105898686, z: 0.06768794, w: 0.9915891}
+      scale: {x: 0.9999967, y: 1.0000001, z: 1.0000025}
+    - name: Base HumanLArmDigit22
+      parentName: Base HumanLArmDigit21
+      position: {x: -0.02699459, y: 0.000000038146972, z: 0}
+      rotation: {x: -0.0009062976, y: -0.00064580864, z: 0.031597387, w: 0.9995001}
+      scale: {x: 0.99999547, y: 1.0000031, z: 1.0000024}
+    - name: Base HumanLArmDigit23
+      parentName: Base HumanLArmDigit22
+      position: {x: -0.025481796, y: 0.000000038146972, z: 0.000000076293944}
+      rotation: {x: -0.00000085774747, y: -0.00000014575188, z: 0.18919376, w: 0.98193973}
+      scale: {x: 0.99999386, y: 1.0000025, z: 0.9999998}
+    - name: Base HumanLArmDigit31
+      parentName: Base HumanLArmPalm
+      position: {x: -0.13412109, y: 0, z: 0.015467834}
+      rotation: {x: 0.0055981856, y: 0.032498267, z: -0.07459981, w: 0.9966682}
+      scale: {x: 0.999999, y: 1.0000024, z: 0.99999887}
+    - name: Base HumanLArmDigit32
+      parentName: Base HumanLArmDigit31
+      position: {x: -0.043230627, y: 0, z: 0}
+      rotation: {x: -0.0000049746554, y: -0.0000014454114, z: 0.021231608, w: 0.99977463}
+      scale: {x: 0.99999887, y: 1.0000004, z: 1}
+    - name: Base HumanLArmDigit33
+      parentName: Base HumanLArmDigit32
+      position: {x: -0.019190826, y: 0, z: 0}
+      rotation: {x: 0.000002158027, y: -0.0000011520304, z: 0.15353462, w: 0.9881433}
+      scale: {x: 1.0000002, y: 1.0000004, z: 1.0000001}
+    - name: Base HumanLArmDigit41
+      parentName: Base HumanLArmPalm
+      position: {x: -0.13421898, y: -0.0000002670288, z: -0.015077438}
+      rotation: {x: 0.043406673, y: 0.015977504, z: -0.060446203, w: 0.9970992}
+      scale: {x: 0.9999981, y: 1.0000026, z: 0.99999905}
+    - name: Base HumanLArmDigit42
+      parentName: Base HumanLArmDigit41
+      position: {x: -0.035081558, y: 0, z: 0}
+      rotation: {x: 0.0019044124, y: 0.00033944275, z: 0.023880253, w: 0.99971306}
+      scale: {x: 1.0000017, y: 1.0000024, z: 0.99999523}
+    - name: Base HumanLArmDigit43
+      parentName: Base HumanLArmDigit42
+      position: {x: -0.023676071, y: -0.000000019073486, z: 0}
+      rotation: {x: -0.000008105067, y: 0.0000029953658, z: 0.47445846, w: 0.88027793}
+      scale: {x: 0.9999897, y: 1.000007, z: 1}
+    - name: Base HumanLArmDigit51
+      parentName: Base HumanLArmPalm
+      position: {x: -0.13316512, y: -0.00000015258789, z: -0.041975632}
+      rotation: {x: -0.008521911, y: -0.014611556, z: 0.007961493, w: 0.99982524}
+      scale: {x: 1.0000032, y: 0.9999984, z: 0.9999977}
+    - name: Base HumanLArmDigit52
+      parentName: Base HumanLArmDigit51
+      position: {x: -0.015028228, y: 0.000000057220458, z: -0.000000038146972}
+      rotation: {x: 0.001378623, y: 0.0024587999, z: 0.03535919, w: 0.9993707}
+      scale: {x: 1.000002, y: 0.99999756, z: 0.9999997}
+    - name: Base HumanLArmDigit53
+      parentName: Base HumanLArmDigit52
+      position: {x: -0.020229872, y: -0.000000038146972, z: 0}
+      rotation: {x: -0.0030166116, y: -0.012584305, z: 0.2276734, w: 0.9736515}
+      scale: {x: 1.0000037, y: 0.99999696, z: 1.0000001}
+    - name: Base HumanRArmCollarbone
+      parentName: Base HumanRibcage
+      position: {x: 0.0231958, y: 0.01933693, z: -0.053925928}
+      rotation: {x: 0.012361467, y: 0.75377876, z: -0.18247512, w: -0.63116366}
+      scale: {x: 1.0000011, y: 0.99999994, z: 1}
+    - name: Base HumanRArmUpperarm
+      parentName: Base HumanRArmCollarbone
+      position: {x: -0.1371595, y: 0.000000019073486, z: 0.00000015258789}
+      rotation: {x: -0.16044807, y: 0.064374365, z: -0.1289226, w: 0.9764688}
+      scale: {x: 1.0000026, y: 1.0000026, z: 1.0000014}
+    - name: Base HumanRArmForearm
+      parentName: Base HumanRArmUpperarm
+      position: {x: -0.26574126, y: 0, z: 0}
+      rotation: {x: 0.0035300243, y: 0.03332672, z: -0.029158017, w: 0.9990129}
+      scale: {x: 1.0000012, y: 0.9999998, z: 1.0000019}
+    - name: Base HumanRArmPalm
+      parentName: Base HumanRArmForearm
+      position: {x: -0.27302435, y: 0.000000019073486, z: 0}
+      rotation: {x: 0.8217609, y: -0.04393405, z: 0.08690787, w: 0.56144994}
+      scale: {x: 0.9999985, y: 0.9999979, z: 1.0000008}
+    - name: Base HumanRArmDigit11
+      parentName: Base HumanRArmPalm
+      position: {x: -0.05025749, y: -0.021261292, z: -0.03997036}
+      rotation: {x: -0.049684204, y: -0.36717463, z: 0.16203871, w: 0.91458064}
+      scale: {x: 0.9999979, y: 0.9999991, z: 1.0000035}
+    - name: Base HumanRArmDigit12
+      parentName: Base HumanRArmDigit11
+      position: {x: -0.06169239, y: 0, z: 0}
+      rotation: {x: 0.016613957, y: 0.24742877, z: -0.0053513823, w: 0.96874887}
+      scale: {x: 1.0000017, y: 0.999999, z: 0.9999992}
+    - name: Base HumanRArmDigit21
+      parentName: Base HumanRArmPalm
+      position: {x: -0.13359635, y: -0.0033725356, z: -0.04100311}
+      rotation: {x: 0.030904334, y: -0.10589759, z: 0.06768631, w: 0.99158925}
+      scale: {x: 0.99999803, y: 0.9999998, z: 1.0000031}
+    - name: Base HumanRArmDigit22
+      parentName: Base HumanRArmDigit21
+      position: {x: -0.026994513, y: -0.000000019073486, z: 0.000000038146972}
+      rotation: {x: 0.0009058691, y: 0.00064575643, z: 0.031606007, w: 0.9994998}
+      scale: {x: 0.999997, y: 1, z: 1.0000018}
+    - name: Base HumanRArmDigit23
+      parentName: Base HumanRArmDigit22
+      position: {x: -0.025481796, y: 0.000000038146972, z: 0}
+      rotation: {x: -0.00000013317911, y: 0.0000005932524, z: 0.18919416, w: 0.98193973}
+      scale: {x: 0.9999964, y: 0.999999, z: 1.0000037}
+    - name: Base HumanRArmDigit31
+      parentName: Base HumanRArmPalm
+      position: {x: -0.13412109, y: 0, z: -0.015467834}
+      rotation: {x: -0.0055973786, y: -0.03249693, z: -0.07460034, w: 0.99666816}
+      scale: {x: 0.9999992, y: 1.0000019, z: 0.9999996}
+    - name: Base HumanRArmDigit32
+      parentName: Base HumanRArmDigit31
+      position: {x: -0.04323059, y: 0.000000019073486, z: 0}
+      rotation: {x: -0.0000044140006, y: -0.0000014714888, z: 0.02123507, w: 0.9997746}
+      scale: {x: 1.0000008, y: 0.999999, z: 1.000001}
+    - name: Base HumanRArmDigit33
+      parentName: Base HumanRArmDigit32
+      position: {x: -0.019190902, y: 0.000000057220458, z: 0.000000038146972}
+      rotation: {x: 0.0000026191872, y: -0.0000008055809, z: 0.15353319, w: 0.9881435}
+      scale: {x: 1.000002, y: 0.9999969, z: 1.0000002}
+    - name: Base HumanRArmDigit41
+      parentName: Base HumanRArmPalm
+      position: {x: -0.13421883, y: 0.000000076293944, z: 0.0150774}
+      rotation: {x: -0.0434038, y: -0.015976062, z: -0.060449652, w: 0.9970992}
+      scale: {x: 0.9999991, y: 1.0000018, z: 1.0000001}
+    - name: Base HumanRArmDigit42
+      parentName: Base HumanRArmDigit41
+      position: {x: -0.035081632, y: -0.000000019073486, z: 0.000000019073486}
+      rotation: {x: -0.0018958175, y: -0.00034098863, z: 0.02388112, w: 0.999713}
+      scale: {x: 1.0000019, y: 1.0000026, z: 0.9999961}
+    - name: Base HumanRArmDigit43
+      parentName: Base HumanRArmDigit42
+      position: {x: -0.023676148, y: -0.000000019073486, z: -0.000000019073486}
+      rotation: {x: -0.000008093075, y: -0.00000035203985, z: 0.47445774, w: 0.8802783}
+      scale: {x: 0.9999955, y: 1.0000021, z: 1.000004}
+    - name: Base HumanRArmDigit51
+      parentName: Base HumanRArmPalm
+      position: {x: -0.13316505, y: -0.00000015258789, z: 0.04197544}
+      rotation: {x: 0.008523282, y: 0.014616431, z: 0.007963583, w: 0.9998251}
+      scale: {x: 1.0000013, y: 0.9999991, z: 0.99999994}
+    - name: Base HumanRArmDigit52
+      parentName: Base HumanRArmDigit51
+      position: {x: -0.015028228, y: 0, z: 0}
+      rotation: {x: -0.0013957053, y: -0.0024626863, z: 0.035361506, w: 0.99937063}
+      scale: {x: 1.0000021, y: 0.9999968, z: 0.9999991}
+    - name: Base HumanRArmDigit53
+      parentName: Base HumanRArmDigit52
+      position: {x: -0.020229872, y: 0.000000057220458, z: 0}
+      rotation: {x: 0.0030389177, y: 0.012581241, z: 0.22767149, w: 0.973652}
+      scale: {x: 1.000005, y: 0.9999944, z: 0.9999996}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 0.01
+    rootMotionBoneName: Base HumanPelvis
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 3
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
