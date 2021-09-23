@@ -12,6 +12,13 @@ namespace BananaMan
         private float _flyHeight;
         private float _speedRotation;
         private Player _player;
+        
+        private event EventHandler<CaughtPlayerEventArgs> _caughtPlayer;
+        public event EventHandler<CaughtPlayerEventArgs> CaughtPlayer
+        {
+            add { _caughtPlayer += value; }
+            remove { _caughtPlayer -= value; }
+        }
 
         private void Awake()
         {
@@ -21,8 +28,9 @@ namespace BananaMan
         }
         protected override void Interaction()
         {
-            Destroy(_player.gameObject);
-            SceneManager.LoadScene("SampleScene");
+            //Destroy(_player.gameObject);
+            _caughtPlayer?.Invoke(this, new CaughtPlayerEventArgs(_color));
+            //SceneManager.LoadScene("SampleScene");
         }
         public void Fly()
         {

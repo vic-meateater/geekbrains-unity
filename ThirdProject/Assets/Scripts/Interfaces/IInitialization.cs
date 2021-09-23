@@ -2,6 +2,6 @@ namespace BananaMan
 {
     public interface IInitialization
     {
-        void Initialization(IView view);
+        void Action();
     }
 }

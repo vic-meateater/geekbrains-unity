@@ -14,7 +14,7 @@ namespace BananaMan
 
         private void Awake()
         {
-            _material = GetComponent<Renderer>().sharedMaterial;
+            _material = GetComponent<Renderer>().material;
             _flyHeight = Random.Range(1.0f, 5.0f);
             _player = FindObjectOfType<Player>();
             _respawnTime = Random.Range(5, 60);
@@ -26,7 +26,7 @@ namespace BananaMan
             _player.SpeedUp(5);
             //Где правильно вызывать корутину? 
             //StartCoroutine(RespawnGoodBonus(5));
-            StartCoroutine(Respawn(5f));
+            //StartCoroutine(Respawn(5f));
 
         }
         public void Fly()

@@ -4,23 +4,26 @@ using Random = UnityEngine.Random;
 
 namespace BananaMan
 {
-    public abstract class InteractiveObject:MonoBehaviour, IComparable<InteractiveObject>, IInteractable
+    public abstract class InteractiveObject:MonoBehaviour, IInteractable
     {
-        protected IView _view;
-        public event Action<InteractiveObject> OnDestroyChange;
+        //protected IView _view;
+        protected Color _color;
+        //public event Action<InteractiveObject> OnDestroyChange;
         public bool IsInteractable { get; } = true;
         protected abstract void Interaction();
 
         private void Start()
         {
-            ((IAction)this).Action();
+            //((IAction)this).Action();
+            Action();
         }
 
         public void Action()
         {
+            _color = Random.ColorHSV();
             if (TryGetComponent(out Renderer r))
             {
-                r.material.color = Random.ColorHSV();
+                r.material.color = _color;
             }
         }
 
@@ -31,7 +34,7 @@ namespace BananaMan
                 return;
             }
             Interaction();
-            OnDestroyChange?.Invoke(this);
+            //OnDestroyChange?.Invoke(this);
             Destroy(gameObject);
         }
 
@@ -40,13 +43,12 @@ namespace BananaMan
             return name.CompareTo(other.name);
         }
 
-        public void Initialization(IView view)
-        {
-            _view = view;
-            if (TryGetComponent(out Renderer renderer))
-            {
-                renderer.material.color = Color.cyan;
-            }
-        }
+        // public void Initialization(IView view)
+        // {
+        //     if (TryGetComponent(out Renderer renderer))
+        //     {
+        //         renderer.material.color = Color.cyan;
+        //     }
+        // }
     }
 }

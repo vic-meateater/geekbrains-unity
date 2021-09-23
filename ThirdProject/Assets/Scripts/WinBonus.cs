@@ -7,7 +7,7 @@ namespace BananaMan
     public class WinBonus : InteractiveObject, IFly, IRotation, IEquatable<WinBonus>
     {
         public int Point;
-        //private DisplayBonuses _displayBonuses;
+        private DisplayBonuses _displayBonuses;
         private float _flyHeight;
         private float _speedRotation;
 
@@ -19,7 +19,8 @@ namespace BananaMan
         
         protected override void Interaction()
         {
-            _view.Display(Point);
+            //_view.Display(Point);
+            _displayBonuses.Display(Point);
         }
 
         public void Fly()
