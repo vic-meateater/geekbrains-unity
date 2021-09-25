@@ -6,9 +6,9 @@ using random = UnityEngine.Random;
 namespace BananaMan
 {
 
-    public class BadBonus : InteractiveObject, IFly, IRotation, ICloneable
+    public class BadBonus : InteractiveObject, IFly, IRotation
     {
-
+        public event Action<string, Color> OnCaughtPlayerChange = delegate(string str, Color color) {  };
         private float _flyHeight;
         private float _speedRotation;
         private Player _player;
@@ -21,9 +21,17 @@ namespace BananaMan
         }
         protected override void Interaction()
         {
-            Destroy(_player.gameObject);
-            SceneManager.LoadScene("SampleScene");
+            OnCaughtPlayerChange.Invoke(gameObject.name, _color);
+            //SceneManager.LoadScene("SampleScene");
         }
+
+        public override void Execute()
+        {
+            if (!IsInteractable)return;
+            Fly();
+            Rotation();
+        }
+
         public void Fly()
         {
             transform.localPosition = new Vector3(transform.localPosition.x,
@@ -34,12 +42,6 @@ namespace BananaMan
         public void Rotation()
         {
             transform.Rotate(Vector3.up * (Time.deltaTime * _speedRotation), Space.World);
-        }
-
-        public object Clone()
-        {
-            var result = Instantiate(gameObject, transform.position, transform.rotation, transform.parent);
-            return result;
         }
     }
 }

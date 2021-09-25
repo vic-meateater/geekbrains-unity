@@ -9,7 +9,7 @@ namespace BananaMan
 
         public DisplayBonuses()
         {
-            _text = Object.FindObjectOfType<Text>();
+            //
         }
 
         public void Display(int value)

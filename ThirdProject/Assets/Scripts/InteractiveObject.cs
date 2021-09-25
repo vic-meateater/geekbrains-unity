@@ -1,26 +1,21 @@
-using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace BananaMan
 {
-    public abstract class InteractiveObject:MonoBehaviour, IComparable<InteractiveObject>, IInteractable
+    public abstract class InteractiveObject:MonoBehaviour, IExecute
     {
-        protected IView _view;
-        public event Action<InteractiveObject> OnDestroyChange;
-        public bool IsInteractable { get; } = true;
-        protected abstract void Interaction();
+        protected Color _color;
+        private bool _isInteractible;
 
-        private void Start()
+        protected bool IsInteractable
         {
-            ((IAction)this).Action();
-        }
-
-        public void Action()
-        {
-            if (TryGetComponent(out Renderer r))
+            get => _isInteractible;
+            private set
             {
-                r.material.color = Random.ColorHSV();
+                _isInteractible = value;
+                if(TryGetComponent(out Renderer rend)) GetComponent<Renderer>().enabled = _isInteractible;  
+                if(TryGetComponent(out Collider coll)) GetComponent<Collider>().enabled = _isInteractible;
             }
         }
 
@@ -31,22 +26,21 @@ namespace BananaMan
                 return;
             }
             Interaction();
-            OnDestroyChange?.Invoke(this);
-            Destroy(gameObject);
+            IsInteractable = false;
         }
 
-        public int CompareTo(InteractiveObject other)
-        {
-            return name.CompareTo(other.name);
-        }
+        protected abstract void Interaction();
+        public abstract void Execute();
 
-        public void Initialization(IView view)
+        private void Start()
         {
-            _view = view;
-            if (TryGetComponent(out Renderer renderer))
+            IsInteractable = true;
+            _color = Random.ColorHSV();
+            if (TryGetComponent(out Renderer render))
             {
-                renderer.material.color = Color.cyan;
+                render.material.color = _color;
             }
         }
+
     }
 }

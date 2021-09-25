@@ -1,52 +1,70 @@
-using System.Collections.Generic;
-using System.Linq;
+using System;
 using UnityEngine;
 
 namespace BananaMan
 {
-    public class GameController : MonoBehaviour
+    public sealed class GameController : MonoBehaviour, IDisposable
     {
-        private List<InteractiveObject> _interactiveObjects;
+        private ListExecuteObject _interactiveObject;
+        private DisplayEndGame _displayEndGame;
+        private DisplayBonuses _displayBonuses;
+        private int _countBonuses;
 
         private void Awake()
         {
-            _interactiveObjects = FindObjectsOfType<InteractiveObject>().ToList();;
-            var displayBonuses = new DisplayBonuses();
-            foreach (var interactiveObject in _interactiveObjects)
+            _interactiveObject = new ListExecuteObject();
+            _displayEndGame = new DisplayEndGame();
+            _displayBonuses = new DisplayBonuses();
+            foreach (var interactiveObject in _interactiveObject)
             {
-                interactiveObject.Initialization(displayBonuses);
-                interactiveObject.OnDestroyChange += InteractiveObjectOnOnDestroyChange;
+                if (interactiveObject is BadBonus badBonus)
+                {
+                    badBonus.OnCaughtPlayerChange += CaughtPlayer;
+                    badBonus.OnCaughtPlayerChange += _displayEndGame.GameOver;
+                }
+                
+                if (interactiveObject is WinBonus winBonus)
+                {
+                    winBonus.OnPointChanged += AddBonus;
+                }
             }
         }
-        
-        private void InteractiveObjectOnOnDestroyChange(InteractiveObject value)
+        private void CaughtPlayer(string value, Color args)
         {
-            value.OnDestroyChange -= InteractiveObjectOnOnDestroyChange;
-            _interactiveObjects.Remove(value);
+            Time.timeScale = 0.0f;
         }
-        
+
+        private void AddBonus(int value)
+        {
+            _countBonuses += value;
+            _displayBonuses.Display(_countBonuses);
+        }
         private void Update()
         {
-            foreach (var interactiveObject in _interactiveObjects)
+            for (var i = 0; i < _interactiveObject.Length; i++)
             {
+                var interactiveObject = _interactiveObject[i];
                 if (interactiveObject == null)
                 {
                     continue;
                 }
-
-                if (interactiveObject is IFly fly)
+                interactiveObject.Execute();
+            }
+        }
+        
+        public void Dispose()
+        {
+            foreach (var interactiveObject in _interactiveObject)
+            {
+                if (interactiveObject is BadBonus badBonus)
                 {
-                    fly.Fly();
+                    badBonus.OnCaughtPlayerChange -= CaughtPlayer;
+                    badBonus.OnCaughtPlayerChange -= _displayEndGame.GameOver;
                 }
-
-                if (interactiveObject is IRotation rotation)
+            
+                if (interactiveObject is WinBonus winBonus)
                 {
-                    rotation.Rotation();
-                }
-
-                if (interactiveObject is IFlicker flicker)
-                {
-                    flicker.Flicker();
+                    winBonus.OnPointChanged -= AddBonus;
                 }
             }
         }

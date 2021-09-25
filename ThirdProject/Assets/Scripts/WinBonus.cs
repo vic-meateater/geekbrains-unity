@@ -4,10 +4,10 @@ using random = UnityEngine.Random;
 
 namespace BananaMan
 {
-    public class WinBonus : InteractiveObject, IFly, IRotation, IEquatable<WinBonus>
+    public class WinBonus : InteractiveObject, IFly, IRotation
     {
         public int Point;
-        //private DisplayBonuses _displayBonuses;
+        public event Action<int> OnPointChanged = delegate(int i) { };
         private float _flyHeight;
         private float _speedRotation;
 
@@ -19,7 +19,14 @@ namespace BananaMan
         
         protected override void Interaction()
         {
-            _view.Display(Point);
+            OnPointChanged.Invoke(Point);
+        }
+
+        public override void Execute()
+        {
+            if (!IsInteractable)return;
+            Fly();
+            Rotation();
         }
 
         public void Fly()
@@ -32,11 +39,6 @@ namespace BananaMan
         public void Rotation()
         {
             transform.Rotate(Vector3.down * (Time.deltaTime * _speedRotation), Space.World);
-        }
-
-        public bool Equals(WinBonus other)
-        {
-            return Point == other.Point;
         }
     }  
 }
