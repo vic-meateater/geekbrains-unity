@@ -14,8 +14,10 @@ namespace BananaMan
             private set
             {
                 _isInteractible = value;
-                if(TryGetComponent(out Renderer rend)) GetComponent<Renderer>().enabled = _isInteractible;  
-                if(TryGetComponent(out Collider coll)) GetComponent<Collider>().enabled = _isInteractible;
+                if(TryGetComponent(out Renderer rend)) rend.enabled = _isInteractible;
+                if(TryGetComponent(out Collider coll)) coll.enabled = _isInteractible;
+                GetComponentInChildren<Renderer>().enabled = _isInteractible;
+
             }
         }
 

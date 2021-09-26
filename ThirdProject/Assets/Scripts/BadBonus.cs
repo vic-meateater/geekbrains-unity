@@ -22,7 +22,6 @@ namespace BananaMan
         protected override void Interaction()
         {
             OnCaughtPlayerChange.Invoke(gameObject.name, _color);
-            //SceneManager.LoadScene("SampleScene");
         }
 
         public override void Execute()

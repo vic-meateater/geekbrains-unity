@@ -1,21 +1,23 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 namespace BananaMan
 {
-    public sealed class DisplayBonuses: IView
+    public sealed class DisplayBonuses
     {
-        private Text _text;
+        private Text _goodBonusesText;
         private int _point;
 
-        public DisplayBonuses()
+        public DisplayBonuses(GameObject goodBonus)
         {
-            //
+            _goodBonusesText = goodBonus.GetComponentInChildren<Text>();
+            _goodBonusesText.text = String.Empty;
         }
 
         public void Display(int value)
         {
             _point += value;
-            _text.text = $"Вы набрали {_point} бонусов.";
+            _goodBonusesText.text = $"Вы набрали {_point} бонусов.";
         }
     }
 }
