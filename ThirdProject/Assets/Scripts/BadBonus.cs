@@ -21,7 +21,7 @@ namespace BananaMan
         }
         protected override void Interaction()
         {
-            OnCaughtPlayerChange.Invoke(gameObject.name, _color);
+            OnCaughtPlayerChange.Invoke(gameObject.tag, _color);
         }
 
         public override void Execute()

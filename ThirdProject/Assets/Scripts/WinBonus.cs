@@ -11,6 +11,7 @@ namespace BananaMan
         private float _flyHeight;
         private float _speedRotation;
 
+
         private void Awake()
         {
             _flyHeight = random.Range(1.0f, 2.0f);

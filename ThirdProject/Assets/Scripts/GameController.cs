@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,10 +10,12 @@ namespace BananaMan
         private ListExecuteObject _interactiveObject;
         private DisplayEndGame _displayEndGame;
         private DisplayBonuses _displayBonuses;
-        private DisplayBonuses _displayWinGame;
+        private DisplayWinGame _displayWinGame;
         private CameraController _cameraController;
-        private int _countBonuses;
+        private List<int> _countBonuses = new List<int>();
+        private int _maxBonuses = 4;
         private Reference _reference;
+        
         
         private void Awake()
         {
@@ -22,6 +25,7 @@ namespace BananaMan
             
             _displayEndGame = new DisplayEndGame(_reference.EndGame);
             _displayBonuses = new DisplayBonuses(_reference.Bonuse);
+            _displayWinGame = new DisplayWinGame(_reference.WinGame);
             
             
             _cameraController = new CameraController(_reference.MainCamera.transform);
@@ -59,19 +63,24 @@ namespace BananaMan
 
         private void AddBonus(int value)
         {
-            _countBonuses += value;
-            _displayBonuses.Display(_countBonuses);
+            _countBonuses.Add(value);
+            _displayBonuses.Display(value);
+            if (_countBonuses.Count >= _maxBonuses) WinGame();
         }
+
+        private void WinGame()
+        {
+            _reference.RestartButton.gameObject.SetActive(true);
+            Time.timeScale = 0.0f;
+            _displayWinGame.WinGame();
+        }
+
         private void Update()
         {
             for (var i = 0; i < _interactiveObject.Length; i++)
             {
                 var interactiveObject = _interactiveObject[i];
-                if (interactiveObject == null)
-                {
-                    continue;
-                }
-                interactiveObject.Execute();
+                interactiveObject?.Execute();
             }
         }
         

@@ -14,7 +14,7 @@ namespace BananaMan
             _winGameText.text = String.Empty;
         }
 
-        public void GameOver(string name, Color color)
+        public void WinGame()
         {
             _winGameText.text = $"Вы выиграли!";
         }
