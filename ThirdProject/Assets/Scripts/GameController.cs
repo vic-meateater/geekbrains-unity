@@ -9,6 +9,7 @@ namespace BananaMan
         private ListExecuteObject _interactiveObject;
         private DisplayEndGame _displayEndGame;
         private DisplayBonuses _displayBonuses;
+        private DisplayBonuses _displayWinGame;
         private CameraController _cameraController;
         private int _countBonuses;
         private Reference _reference;

@@ -10,6 +10,7 @@ namespace BananaMan
         private Camera _mainCamera;
         private GameObject _goodBonus;
         private GameObject _endGame;
+        private GameObject _winGame;
         private Canvas _canvas;
         //private CinemachineVirtualCamera _virtualCamera;
         private Button _restartButton;
@@ -40,6 +41,7 @@ namespace BananaMan
             }
         }
         
+        
         public GameObject Bonuse
         {
             get
@@ -65,6 +67,20 @@ namespace BananaMan
                 }
             
                 return _endGame;
+            }
+        }
+        
+        public GameObject WinGame
+        {
+            get
+            {
+                if (_winGame == null)
+                {
+                    var gameObject = Resources.Load<GameObject>("UI/WinGameText");
+                    _winGame = Object.Instantiate(gameObject, Canvas.transform);
+                }
+            
+                return _winGame;
             }
         }
 
