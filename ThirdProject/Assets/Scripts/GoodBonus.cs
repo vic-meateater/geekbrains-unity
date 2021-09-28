@@ -7,6 +7,8 @@ namespace BananaMan
 {
     public sealed class GoodBonus : InteractiveObject, IFly, IFlicker
     {
+        public int AddSpeed;
+        public event Action<int> OnSpeedChanged = delegate(int i) { };
         private Player _player;
         private Material _material;
         private float _flyHeight;
@@ -21,7 +23,7 @@ namespace BananaMan
 
         protected override void Interaction()
         {
-            _player.SpeedUp(5);
+            OnSpeedChanged.Invoke(AddSpeed);
         }
 
         public override void Execute()

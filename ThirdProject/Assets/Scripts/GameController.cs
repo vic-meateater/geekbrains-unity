@@ -12,6 +12,7 @@ namespace BananaMan
         private DisplayBonuses _displayBonuses;
         private DisplayWinGame _displayWinGame;
         private CameraController _cameraController;
+        private Player _player;
         private List<int> _countBonuses = new List<int>();
         private int _maxBonuses = 4;
         private Reference _reference;
@@ -27,7 +28,8 @@ namespace BananaMan
             _displayBonuses = new DisplayBonuses(_reference.Bonuse);
             _displayWinGame = new DisplayWinGame(_reference.WinGame);
             
-            
+
+
             _cameraController = new CameraController(_reference.MainCamera.transform);
             //_interactiveObject.AddExecuteObject(_cameraController);
             
@@ -43,10 +45,21 @@ namespace BananaMan
                 {
                     winBonus.OnPointChanged += AddBonus;
                 }
+
+                if (interactiveObject is GoodBonus goodBonus)
+                {
+                    goodBonus.OnSpeedChanged += AddSpeed;//допилить
+                }
             }
             
             _reference.RestartButton.onClick.AddListener(() => RestartGame());
             _reference.RestartButton.gameObject.SetActive(false);
+        }
+
+        private void AddSpeed(int value)
+        {
+            //_player.SpeedUp(value);
+            
         }
 
         private void RestartGame()
