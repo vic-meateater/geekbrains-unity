@@ -31,7 +31,7 @@ namespace BananaMan
 
 
             _cameraController = new CameraController(_reference.MainCamera.transform);
-            //_interactiveObject.AddExecuteObject(_cameraController);
+            _interactiveObject.AddExecuteObject(_cameraController);
             
             foreach (var interactiveObject in _interactiveObject)
             {

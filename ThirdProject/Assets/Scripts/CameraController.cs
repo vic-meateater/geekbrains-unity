@@ -12,7 +12,7 @@ namespace BananaMan
         }
         public void Execute()
         {
-            //_mainCamera.position = new Vector3(60f, 7f, -1f);
+            _mainCamera.position = new Vector3(60f, 7f, -1f);
         }
     }
 }
