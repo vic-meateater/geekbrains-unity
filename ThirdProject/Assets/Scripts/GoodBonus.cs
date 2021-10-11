@@ -5,7 +5,7 @@ using System.Collections;
 
 namespace BananaMan
 {
-    public sealed class GoodBonus : InteractiveObject, IFly, IFlicker
+    public sealed class GoodBonus : InteractiveObject, IFly
     {
         public int AddSpeed;
         public event Action<int> OnSpeedChanged = delegate(int i) { };
@@ -16,7 +16,7 @@ namespace BananaMan
 
         private void Awake()
         {
-            _material = GetComponent<Renderer>().sharedMaterial;
+            //_material = GetComponent<Renderer>().sharedMaterial;
             _flyHeight = Random.Range(1.0f, 5.0f);
             _player = FindObjectOfType<Player>();
         }
@@ -30,7 +30,7 @@ namespace BananaMan
         {
             if (!IsInteractable)return;
             Fly();
-            Flicker();
+            //Flicker();
         }
 
         public void Fly()
@@ -39,13 +39,13 @@ namespace BananaMan
                                                   Mathf.PingPong(Time.time, _flyHeight),
                                                   transform.localPosition.z);
         }
-        public void Flicker()
-        {
-            _material.color = new Color(_material.color.r,
-                                        _material.color.g,
-                                        _material.color.b,
-                                        Mathf.PingPong(Time.time, 1f));
-        }
+        // public void Flicker()
+        // {
+        //     // _material.color = new Color(_material.color.r,
+        //     //                             _material.color.g,
+        //     //                             _material.color.b,
+        //     //                             Mathf.PingPong(Time.time, 1f));
+        // }
         
     }
 }
