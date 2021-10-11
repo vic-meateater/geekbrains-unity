@@ -11,9 +11,9 @@ namespace BananaMan
             transform.rotation = Quaternion.Euler(90.0f, 0, 0);
             transform.position = _player.position + new Vector3(0, 5.0f, 0);
 
-            //var rt = Resources.Load<RenderTexture>("MiniMap/MiniMapTexture");
+            var rt = Resources.Load<RenderTexture>("MiniMap/MiniMapTexture");
 
-            //GetComponent<Camera>().targetTexture = rt;
+            GetComponent<Camera>().targetTexture = rt;
         }
 
         private void Update()
