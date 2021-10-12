@@ -12,10 +12,12 @@ namespace BananaMan
         private DisplayBonuses _displayBonuses;
         private DisplayWinGame _displayWinGame;
         private CameraController _cameraController;
+        private InputController _inputController;
         private Player _player;
         private List<int> _countBonuses = new List<int>();
         private int _maxBonuses = 4;
         private Reference _reference;
+        private MiniMap _miniMap;
         
         
         private void Awake()
@@ -28,10 +30,15 @@ namespace BananaMan
             _displayBonuses = new DisplayBonuses(_reference.Bonuse);
             _displayWinGame = new DisplayWinGame(_reference.WinGame);
             
-
-
             _cameraController = new CameraController(_reference.MainCamera.transform);
-            //_interactiveObject.AddExecuteObject(_cameraController);
+            _interactiveObject.AddExecuteObject(_cameraController);
+
+            _player = FindObjectOfType<Player>();
+            _inputController = new InputController(_player, _interactiveObject);
+            _interactiveObject.AddExecuteObject(_inputController);
+
+            //_miniMap = new MiniMap(_player.transform);
+            //_interactiveObject.AddExecuteObject(_miniMap);
             
             foreach (var interactiveObject in _interactiveObject)
             {
@@ -48,7 +55,7 @@ namespace BananaMan
 
                 if (interactiveObject is GoodBonus goodBonus)
                 {
-                    goodBonus.OnSpeedChanged += AddSpeed;//допилить
+                    goodBonus.OnSpeedChanged += AddSpeed;
                 }
             }
             
@@ -58,8 +65,7 @@ namespace BananaMan
 
         private void AddSpeed(int value)
         {
-            //_player.SpeedUp(value);
-            
+            _player.SpeedUp(value);
         }
 
         private void RestartGame()
@@ -110,6 +116,11 @@ namespace BananaMan
                 if (interactiveObject is WinBonus winBonus)
                 {
                     winBonus.OnPointChanged -= AddBonus;
+                }
+                
+                if (interactiveObject is GoodBonus goodBonus)
+                {
+                    goodBonus.OnSpeedChanged-= AddSpeed;
                 }
             }
         }

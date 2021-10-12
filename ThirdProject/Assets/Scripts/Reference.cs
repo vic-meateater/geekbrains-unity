@@ -1,4 +1,4 @@
-﻿//using Cinemachine;
+﻿using Cinemachine;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,7 +12,7 @@ namespace BananaMan
         private GameObject _endGame;
         private GameObject _winGame;
         private Canvas _canvas;
-        //private CinemachineVirtualCamera _virtualCamera;
+        private CinemachineVirtualCamera _virtualCamera;
         private Button _restartButton;
 
         public Button RestartButton
@@ -100,18 +100,17 @@ namespace BananaMan
             
         }
 
-        // public CinemachineVirtualCamera VirtualCamera
-        // {
-        //     get
-        //     {
-        //         if (_virtualCamera == null)
-        //         {
-        //             var gameObject = Resources.Load<CinemachineVirtualCamera>("VirtualCamera");
-        //             _virtualCamera = Object.Instantiate(gameObject);
-        //         }
-        //         return _virtualCamera;
-        //     }
-        // }
+        public CinemachineVirtualCamera VirtualCamera
+        {
+            get
+            {
+                if (_virtualCamera == null)
+                {
+                    //var gameObject = Resources.Load<CinemachineVirtualCamera>("VirtualCamera");
+                }
+                return _virtualCamera;
+            }
+        }
 
         public Camera MainCamera
         {
@@ -119,8 +118,6 @@ namespace BananaMan
             {
                 if (_mainCamera == null)
                 {
-                    // var gameObject = Resources.Load<Camera>("MainCamera");
-                    // _mainCamera = Object.Instantiate(gameObject);
                     _mainCamera = Camera.main;
                 }
                 return _mainCamera;

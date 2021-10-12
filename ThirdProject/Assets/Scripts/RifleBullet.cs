@@ -1,9 +1,11 @@
+using System;
 using UnityEngine;
 
 namespace BananaMan
 {
     public sealed class RifleBullet : BaseBullet
     {
+        //public event Action<Vector3, > OnBulletShooting = delegate(string str, Color color) {  }; // доделать стрельбу
         public void Init()
         {
             Debug.Log("Init");
