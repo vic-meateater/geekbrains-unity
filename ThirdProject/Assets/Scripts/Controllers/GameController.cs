@@ -17,6 +17,7 @@ namespace BananaMan
         private List<int> _countBonuses = new List<int>();
         private int _maxBonuses = 4;
         private Reference _reference;
+        private MiniMap _miniMap;
         
         
         private void Awake()
@@ -33,8 +34,11 @@ namespace BananaMan
             _interactiveObject.AddExecuteObject(_cameraController);
 
             _player = FindObjectOfType<Player>();
-            _inputController = new InputController(_player);
+            _inputController = new InputController(_player, _interactiveObject);
             _interactiveObject.AddExecuteObject(_inputController);
+
+            //_miniMap = new MiniMap(_player.transform);
+            //_interactiveObject.AddExecuteObject(_miniMap);
             
             foreach (var interactiveObject in _interactiveObject)
             {
@@ -112,6 +116,11 @@ namespace BananaMan
                 if (interactiveObject is WinBonus winBonus)
                 {
                     winBonus.OnPointChanged -= AddBonus;
+                }
+                
+                if (interactiveObject is GoodBonus goodBonus)
+                {
+                    goodBonus.OnSpeedChanged-= AddSpeed;
                 }
             }
         }

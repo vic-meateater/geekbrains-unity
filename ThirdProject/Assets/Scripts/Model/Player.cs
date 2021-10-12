@@ -70,7 +70,8 @@ namespace BananaMan
         {
             StartCoroutine(SpeedUpTimer(value));
         }
-        protected IEnumerator SpeedUpTimer(int timer)
+
+        private IEnumerator SpeedUpTimer(int timer)
         {
             movementSpeed += timer;
             yield return new WaitForSeconds(timer);
