@@ -8,7 +8,7 @@ namespace BananaMan
         private readonly Player _player;
         private readonly Gun _gun;
         private readonly ListExecuteObject _listExecuteObject;
-        private readonly string _fire = "Fire1";// KeyCode.Mouse0;
+        private readonly string _fire = "Fire1";
         private readonly SaveDataRepository _saveDataRepository;
         private readonly KeyCode _save = KeyCode.F5;
         private readonly KeyCode _load = KeyCode.F6;
@@ -29,7 +29,7 @@ namespace BananaMan
             if (Input.GetButton(_fire) && Time.time >= _cooldown)
             {
                 _cooldown = Time.time + 1f / _gun._firerate;
-                _player.Fire();
+                _gun.Shoot();
             }
             if (Input.GetKeyDown(_save))
             {

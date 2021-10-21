@@ -53,7 +53,7 @@ namespace BananaMan
 
         public override void Fire()
         {
-            _gun.Shoot();
+            //
         }
         
         public override void SpeedUp(int value)
