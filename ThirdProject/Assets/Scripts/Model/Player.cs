@@ -8,12 +8,14 @@ namespace BananaMan
         [SerializeField] private LayerMask _layerMask;
         [SerializeField] private GameObject _bulletPref;
         [SerializeField] private Transform _bulletStartPosition;
+        private Gun _gun;
         
         
         private int _animatorHashX;
         private int _animatorHashZ;
         private void Awake()
         {
+            _gun = new Gun();
             _animatorHashX = Animator.StringToHash("VelocityX");
             _animatorHashZ = Animator.StringToHash("VelocityZ");
         }
@@ -51,17 +53,9 @@ namespace BananaMan
 
         public override void Fire()
         {
-            //StartCoroutine(FireTimer(2f));
-            var bulletInstantiate = Instantiate(_bulletPref, _bulletStartPosition.position, transform.rotation);
-            bulletInstantiate.GetComponent<RifleBullet>().Init();
+            _gun.Shoot();
         }
-
-        private IEnumerator FireTimer(float deltatimer)
-        {
-            var bulletInstantiate = Instantiate(_bulletPref, _bulletStartPosition.position, transform.rotation);
-            bulletInstantiate.GetComponent<RifleBullet>().Init();
-            yield return new WaitForSeconds(2f);
-        }
+        
         public override void SpeedUp(int value)
         {
             StartCoroutine(SpeedUpTimer(value));

@@ -16,6 +16,7 @@ namespace BananaMan
         private EnemyController _enemyController;
         private Player _player;
         private Zombie _zombie;
+        private Gun _gun;
         private List<int> _countBonuses = new List<int>();
         private int _maxBonuses = 4;
         private Reference _reference;
@@ -36,8 +37,9 @@ namespace BananaMan
             _cameraController = new CameraController(_reference.MainCamera.transform);
             _interactiveObject.AddExecuteObject(_cameraController);
 
+            _gun = FindObjectOfType<Gun>();
             _player = FindObjectOfType<Player>();
-            _inputController = new InputController(_player, _interactiveObject);
+            _inputController = new InputController(_player, _interactiveObject, _gun);
             _interactiveObject.AddExecuteObject(_inputController);
             
             _miniMap = new MiniMap(_player.transform, _miniMapCamera);
@@ -45,6 +47,8 @@ namespace BananaMan
             _zombie = FindObjectOfType<Zombie>();
             _enemyController = new EnemyController(_zombie, _player.transform);
             _interactiveObject.AddExecuteObject(_enemyController);
+            
+            
             
             foreach (var interactiveObject in _interactiveObject)
             {

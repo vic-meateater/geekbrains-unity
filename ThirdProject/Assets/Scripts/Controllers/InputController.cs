@@ -6,15 +6,19 @@ namespace BananaMan
     public class InputController:IExecute
     {
         private readonly Player _player;
+        private readonly Gun _gun;
         private readonly ListExecuteObject _listExecuteObject;
-        private readonly KeyCode _fire = KeyCode.Mouse0;
+        private readonly string _fire = "Fire1";// KeyCode.Mouse0;
         private readonly SaveDataRepository _saveDataRepository;
         private readonly KeyCode _save = KeyCode.F5;
         private readonly KeyCode _load = KeyCode.F6;
 
-        public InputController(Player player, ListExecuteObject listExecuteObject)
+        private float _cooldown = 0f;
+
+        public InputController(Player player, ListExecuteObject listExecuteObject, Gun gun)
         {
             _player = player;
+            _gun = gun;
             _saveDataRepository = new SaveDataRepository();
             _listExecuteObject = listExecuteObject;
         }
@@ -22,8 +26,9 @@ namespace BananaMan
         {
             _player.MovePlayer(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
             _player.AimTowardMouse();
-            if (Input.GetKey(_fire))
+            if (Input.GetButton(_fire) && Time.time >= _cooldown)
             {
+                _cooldown = Time.time + 1f / _gun._firerate;
                 _player.Fire();
             }
             if (Input.GetKeyDown(_save))
