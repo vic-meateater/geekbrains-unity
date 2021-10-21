@@ -15,7 +15,6 @@ namespace BananaMan
         private int _animatorHashZ;
         private void Awake()
         {
-            _gun = new Gun();
             _animatorHashX = Animator.StringToHash("VelocityX");
             _animatorHashZ = Animator.StringToHash("VelocityZ");
         }
