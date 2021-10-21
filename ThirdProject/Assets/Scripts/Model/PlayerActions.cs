@@ -1,6 +1,3 @@
-using System.Collections;
-using UnityEngine;
-
 namespace BananaMan
 {
     public abstract class PlayerActions : BaseCharacter

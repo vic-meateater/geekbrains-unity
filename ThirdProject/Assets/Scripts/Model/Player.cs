@@ -17,12 +17,6 @@ namespace BananaMan
             _animatorHashX = Animator.StringToHash("VelocityX");
             _animatorHashZ = Animator.StringToHash("VelocityZ");
         }
-        private void Update()
-        {
-            //AimTowardMouse();
-            // if(Input.GetKeyDown(KeyCode.Mouse0))
-            //    Fire();
-        }
 
         public override void MovePlayer(float moveX, float moveY, float moveZ)
         {
@@ -57,7 +51,9 @@ namespace BananaMan
 
         public override void Fire()
         {
-            StartCoroutine(FireTimer(2f));
+            //StartCoroutine(FireTimer(2f));
+            var bulletInstantiate = Instantiate(_bulletPref, _bulletStartPosition.position, transform.rotation);
+            bulletInstantiate.GetComponent<RifleBullet>().Init();
         }
 
         private IEnumerator FireTimer(float deltatimer)

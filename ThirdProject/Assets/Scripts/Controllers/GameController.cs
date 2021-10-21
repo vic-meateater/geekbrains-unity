@@ -13,11 +13,14 @@ namespace BananaMan
         private DisplayWinGame _displayWinGame;
         private CameraController _cameraController;
         private InputController _inputController;
+        private EnemyController _enemyController;
         private Player _player;
+        private Zombie _zombie;
         private List<int> _countBonuses = new List<int>();
         private int _maxBonuses = 4;
         private Reference _reference;
         private MiniMap _miniMap;
+        [SerializeField]private Camera _miniMapCamera;
         
         
         private void Awake()
@@ -36,9 +39,12 @@ namespace BananaMan
             _player = FindObjectOfType<Player>();
             _inputController = new InputController(_player, _interactiveObject);
             _interactiveObject.AddExecuteObject(_inputController);
-
-            //_miniMap = new MiniMap(_player.transform);
-            //_interactiveObject.AddExecuteObject(_miniMap);
+            
+            _miniMap = new MiniMap(_player.transform, _miniMapCamera);
+            
+            _zombie = FindObjectOfType<Zombie>();
+            _enemyController = new EnemyController(_zombie, _player.transform);
+            _interactiveObject.AddExecuteObject(_enemyController);
             
             foreach (var interactiveObject in _interactiveObject)
             {
@@ -101,6 +107,8 @@ namespace BananaMan
                 var interactiveObject = _interactiveObject[i];
                 interactiveObject?.Execute();
             }
+            _miniMap.Execute();
+            //_enemyController.Execute();
         }
         
         public void Dispose()

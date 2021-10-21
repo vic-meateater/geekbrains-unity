@@ -1,10 +1,11 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace BananaMan
 {
     public abstract class BaseCharacter : MonoBehaviour, ITakeDamage
     {
-        [SerializeField] private int _maxHealth = 30;
+        [SerializeField] public int _maxHealth = 30;
         [SerializeField] public float movementSpeed;
         protected int CurrentHealth;
         

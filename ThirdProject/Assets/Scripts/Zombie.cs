@@ -1,17 +1,13 @@
+using UnityEngine.AI;
+
 namespace BananaMan
 {
     public class Zombie : EnemyActions
     {
-        private void Update()
-        {
-            ChasePlayer(IsDied);
-            Die();
-        }
-
-        protected override void Die()
+        public override void Die(NavMeshAgent navMeshAgent)
         {
             if (CurrentHealth > 0) return;
-            base.Die();
+            base.Die(navMeshAgent);
             _animator.SetTrigger("DieTrigger");
 
         }
