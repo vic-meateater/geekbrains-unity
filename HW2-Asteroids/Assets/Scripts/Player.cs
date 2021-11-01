@@ -2,28 +2,26 @@ using UnityEngine;
 
 namespace Asteroids
 {
+    [RequireComponent(typeof(Rigidbody2D))]
     internal sealed class Player : MonoBehaviour
     {
         [SerializeField] private float _speed;
         [SerializeField] private float _acceleration;
         [SerializeField] private float _hp;
-        [SerializeField] private Rigidbody2D _bullet;
-        [SerializeField] private Transform _barrel;
-        [SerializeField] private float _force;
-        private InputController _inputController;
-        private Camera _camera;
-        private Ship _ship;
+            //[SerializeField] private Rigidbody2D _bullet;
+        //[SerializeField] private Transform _barrel;
+        //[SerializeField] private float _force;
+        internal Ship Ship{get; private set; }
 
-        private void Start()
+        private void Awake()
         {
             var shipRigidbody2D = gameObject.GetComponent<Rigidbody2D>();
-            _camera = Camera.main;
             var moveTransform = new AccelerationMove(shipRigidbody2D, _speed, _acceleration);
             var rotation = new RotationShip(transform);
-            _ship = new Ship(moveTransform, rotation);
-            _inputController = new InputController(_ship,_camera);
-        }
+            Ship = new Ship(moveTransform, rotation);
 
+        }
+/*
         private void Update()
         {
             _inputController.Rotation();
@@ -40,7 +38,7 @@ namespace Asteroids
         {
             _inputController.Move();
         }
-
+*/
         private void OnCollisionEnter2D(Collision2D other)
         {
             if (_hp <= 0)

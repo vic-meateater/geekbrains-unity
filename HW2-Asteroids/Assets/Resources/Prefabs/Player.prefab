@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 6800589051107305131}
   - component: {fileID: 6800589051107305125}
   - component: {fileID: 6001877196834463388}
+  - component: {fileID: -185859619476036755}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -385,8 +386,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4039c51c27bbad549884ef2375e774d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 0
-  _hp: 0
-  _bullet: {fileID: 0}
+  _speed: 55
+  _acceleration: 66
+  _hp: 1000
+  _bullet: {fileID: 1615454511844546288, guid: 2cb48feac7c803b4c9fe7687c9fe9c48, type: 3}
   _barrel: {fileID: 0}
-  _force: 0
+  _force: 500
+--- !u!50 &-185859619476036755
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6800589051107305130}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

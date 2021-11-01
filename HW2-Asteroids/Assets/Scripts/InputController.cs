@@ -8,10 +8,10 @@ namespace Asteroids
         private Transform _transform;
         private Camera _camera;
 
-        internal InputController(Ship ship, Camera camera)
+        internal InputController(Player player, Camera camera)
         {
-            _ship = ship;
-            _transform = camera.gameObject.transform;
+            _ship = player.Ship;
+            _transform = player.transform;
             _camera = camera;
         }
 

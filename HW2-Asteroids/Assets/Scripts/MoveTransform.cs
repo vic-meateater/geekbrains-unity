@@ -8,15 +8,15 @@ namespace Asteroids
         private Vector3 _move;
         
         public float Speed { get; protected set; }
-        public MoveTransform(Rigidbody2D shipRigidbody2D, float speed)
+        protected MoveTransform(Rigidbody2D shipRigidbody2D, float speed)
         {
             _shipRigidbody2D = shipRigidbody2D;
             Speed = speed;
         }
         
-        public void Move(float horizontal, float vertical, float fixeddDeltaTime)
+        public void Move(float horizontal, float vertical, float fixedDeltaTime)
         {
-            var speed = fixeddDeltaTime * Speed;
+            var speed = fixedDeltaTime * Speed;
             _move.Set(horizontal * speed, vertical * speed, 0.0f);
             _shipRigidbody2D.AddForce(_move);
         }

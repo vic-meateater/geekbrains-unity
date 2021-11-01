@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace Asteroids
@@ -6,28 +5,30 @@ namespace Asteroids
     public class GameController:MonoBehaviour
     {
         private InputController _inputController;
-        private Ship _ship;
+        private PlayerReferece _playerReference;
+        private CameraReference _cameraReference;
         private Camera _camera;
         private Player _player;
 
         private void Start()
         {
-            var shipRigidbody2D = gameObject.GetComponent<Rigidbody2D>();
-            _camera = Camera.main;
-            var moveTransform = new AccelerationMove(shipRigidbody2D, _speed, _acceleration);
-            var rotation = new RotationShip(transform);
-            _ship = new Ship(moveTransform, rotation);
-            _inputController = new InputController(_ship,_camera);
+            _playerReference = new PlayerReferece();
+            _cameraReference = new CameraReference();
+            _player = _playerReference.Player;
+            _camera = _cameraReference.Camera;
+            _inputController = new InputController(_player,_camera);
         }
 
         private void Update()
         {
-            throw new NotImplementedException();
+            _inputController.Acceleration();
+            _inputController.RemoveAcceleration();
+            _inputController.Rotation();
         }
 
         private void FixedUpdate()
         {
-            throw new NotImplementedException();
+            _inputController.Move();
         }
     }
 }
