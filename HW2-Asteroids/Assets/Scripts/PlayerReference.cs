@@ -2,7 +2,7 @@
 
 namespace Asteroids
 {
-    public sealed class PlayerReferece
+    public sealed class PlayerReference
     {
         private Player _player;
 

@@ -2,17 +2,19 @@
 
 namespace Asteroids
 {
-    public class Ship:IMove,IRotation
+    public class Ship:IMove,IRotation,IShoot
     {
         private readonly IMove _moveImplementation;
         private readonly IRotation _rotationImplementation;
+        private readonly IShoot _shootImplementation;
 
         public float Speed => _moveImplementation.Speed;
         
-        public Ship(IMove moveImplementation, IRotation rotationImplementation)
+        public Ship(IMove moveImplementation, IRotation rotationImplementation, IShoot shootImplementation)
         {
             _moveImplementation = moveImplementation;
             _rotationImplementation = rotationImplementation;
+            _shootImplementation = shootImplementation;
         }
         
         public void Move(float horizontal, float vertical, float fixedDeltaTime)
@@ -39,6 +41,11 @@ namespace Asteroids
             {
                 accelerationMove.RemoveAcceleration();
             }
+        }
+
+        public void Shoot()
+        {
+            _shootImplementation.Shoot();
         }
     }
 }

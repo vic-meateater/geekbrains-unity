@@ -41,5 +41,13 @@ namespace Asteroids
                 _ship.RemoveAcceleration();
             }
         }
+
+        public void Fire()
+        {
+            if (Input.GetButtonDown("Fire1"))
+            {
+                _ship.Shoot();
+            }
+        }
     }
 }

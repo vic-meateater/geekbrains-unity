@@ -5,14 +5,14 @@ namespace Asteroids
     public class GameController:MonoBehaviour
     {
         private InputController _inputController;
-        private PlayerReferece _playerReference;
+        private PlayerReference _playerReference;
         private CameraReference _cameraReference;
         private Camera _camera;
         private Player _player;
 
         private void Start()
         {
-            _playerReference = new PlayerReferece();
+            _playerReference = new PlayerReference();
             _cameraReference = new CameraReference();
             _player = _playerReference.Player;
             _camera = _cameraReference.Camera;
@@ -24,6 +24,7 @@ namespace Asteroids
             _inputController.Acceleration();
             _inputController.RemoveAcceleration();
             _inputController.Rotation();
+            _inputController.Fire();
         }
 
         private void FixedUpdate()
