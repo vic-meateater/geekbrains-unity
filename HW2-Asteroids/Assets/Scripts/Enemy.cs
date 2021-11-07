@@ -2,13 +2,15 @@
 
 namespace Asteroids
 {
-    internal abstract class Enemy : MonoBehaviour
+    public abstract class Enemy : MonoBehaviour
     {
+        private static EnemyReference _enemyReference;
         public Health Health { get; private set; }
 
         public static Asteroid CreateAsteroidEnemy(Health hp)
         {
-            var enemy = Instantiate(Resources.Load<Asteroid>("Prefabs/Enemy/Asteroid"));
+            _enemyReference = new EnemyReference();
+            var enemy = _enemyReference.Asteroid;
             enemy.Health = hp;
             return enemy;
         }

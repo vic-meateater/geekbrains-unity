@@ -1,6 +1,6 @@
 ﻿namespace Asteroids
 {
-    internal sealed class Asteroid : Enemy
+    public sealed class Asteroid : Enemy
     {
     }
 }

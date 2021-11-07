@@ -1,6 +1,6 @@
 ﻿namespace Asteroids
 {
-    internal sealed class Health
+    public sealed class Health
     {
         public float Max { get; }
         public float Current { get; private set; }
