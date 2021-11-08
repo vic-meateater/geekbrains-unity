@@ -2,6 +2,7 @@
 {
     public interface IEnemyFactory
     {
-        Enemy Create(Health hp);
+        Enemy CreateAsteroid(Health hp);
+        Enemy CreateStarship(Health hp);
     }
 }

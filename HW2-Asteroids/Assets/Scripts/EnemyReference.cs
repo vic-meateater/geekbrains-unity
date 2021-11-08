@@ -22,7 +22,7 @@ namespace Asteroids
             get
             {
                 if (_enemyStarship != null) return _enemyStarship;
-                var gameObject = Resources.Load<EnemyStarship>("Prefabs/Enemy/EnemyStarShip");
+                var gameObject = Resources.Load<EnemyStarship>("Prefabs/Enemy/EnemyStarship");
                 _enemyStarship = Object.Instantiate(gameObject);
                 return _enemyStarship;
             }

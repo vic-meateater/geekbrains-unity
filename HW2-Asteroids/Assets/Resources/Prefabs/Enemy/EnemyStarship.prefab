@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6800589051107305131}
   - component: {fileID: -185859619476036755}
   - component: {fileID: 2519398077718872299}
+  - component: {fileID: 2113816810595138678}
   m_Layer: 0
   m_Name: EnemyStarship
   m_TagString: Untagged
@@ -304,3 +305,15 @@ PolygonCollider2D:
       - {x: 0.29999998, y: 0.35}
       - {x: 0.29, y: 0.34}
       - {x: 0.29999998, y: 0.34}
+--- !u!114 &2113816810595138678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6800589051107305130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f501764d06754d67a1ce020638369812, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
