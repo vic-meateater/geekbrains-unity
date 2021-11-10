@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Asteroids.ObjectPool;
+using UnityEngine;
 
 namespace Asteroids
 {
@@ -6,10 +7,22 @@ namespace Asteroids
     {
         private void Start()
         {
-            Enemy.CreateAsteroidEnemy(new Health(100f, 100f));
+            // Enemy.CreateAsteroidEnemy(new Health(100f, 100f));
+            //
+            // IEnemyFactory factory = new EnemyFactory();
+            // factory.CreateStarship(new Health(100f, 100f));
+
+            EnemyPool enemyAsteroidPool = new EnemyPool(3);
+            EnemyPool enemyStarshipPool = new EnemyPool(2);
             
-            IEnemyFactory factory = new EnemyFactory();
-            factory.CreateStarship(new Health(100f, 100f));
+            var enemyAsteroid = enemyAsteroidPool.GetEnemy("Asteroid");
+            enemyAsteroid.transform.position = Vector3.zero;
+            enemyAsteroid.gameObject.SetActive(true);
+            
+            var enemyStarship = enemyStarshipPool.GetEnemy("EnemyStarship");
+            enemyStarship.transform.position = Vector3.zero;
+            enemyStarship.gameObject.SetActive(true);
+            
         }
     }
 }
