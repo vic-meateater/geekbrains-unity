@@ -3,14 +3,19 @@ using UnityEngine;
 namespace Asteroids
 {
     [RequireComponent(typeof(Rigidbody2D))]
-    internal sealed class Player : MonoBehaviour
+    public sealed class Player : MonoBehaviour
     {
         [SerializeField] private float _speed;
         [SerializeField] private float _acceleration;
         [SerializeField] private float _hp;
         [SerializeField] private Transform _barrel;
 
-        internal Ship Ship{get; private set; }
+        public Ship Ship {get; private set; }
+        public float Health
+        {
+            get => _hp;
+            set => _hp = value;
+        }
 
         private void Awake()
         {

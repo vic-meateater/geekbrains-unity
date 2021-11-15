@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Asteroids
 {
-    internal class MoveRigidbody
+    internal class MoveRigidbody: IMove
     {
         private readonly Rigidbody2D _shipRigidbody2D;
         private Vector3 _move;
