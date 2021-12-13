@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace MyPlatformer2D
@@ -16,7 +14,6 @@ namespace MyPlatformer2D
         {
             _playerConfig = Resources.Load<SpriteAnimatorConfig>("PlayerAnimCfg");
             _playerAnimator = new SpriteAnimatorController(_playerConfig);
-            
             _playerAnimator.StartAnimation(_playerView._spriteRenderer,AnimState.Walk,true,_animationSpeed);
         }
 
