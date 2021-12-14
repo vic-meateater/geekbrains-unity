@@ -40,7 +40,7 @@ namespace MyPlatformer2D
         }
 
         private SpriteAnimatorConfig _config;
-        private Dictionary<SpriteRenderer, Animation> _activeAnimation = new Dictionary<SpriteRenderer, Animation>();
+        private Dictionary<SpriteRenderer, Animation> _activeAnimation = new();
 
         public SpriteAnimatorController(SpriteAnimatorConfig config)
         {

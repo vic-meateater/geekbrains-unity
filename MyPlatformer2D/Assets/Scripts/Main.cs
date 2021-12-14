@@ -8,18 +8,22 @@ namespace MyPlatformer2D
         [SerializeField] private int _animationSpeed = 15;
         [SerializeField] private LevelObjectView _playerView;
 
+
         private SpriteAnimatorController _playerAnimator;
+        private PlayerController _playerController;
         
         void Start()
         {
             _playerConfig = Resources.Load<SpriteAnimatorConfig>("PlayerAnimCfg");
             _playerAnimator = new SpriteAnimatorController(_playerConfig);
-            _playerAnimator.StartAnimation(_playerView._spriteRenderer,AnimState.Walk,true,_animationSpeed);
+            //_playerAnimator.StartAnimation(_playerView._spriteRenderer,AnimState.Walk,true,_animationSpeed);
+            _playerController = new PlayerController(_playerView, _playerAnimator);
         }
 
         void Update()
         {
-            _playerAnimator.Update();
+            //_playerAnimator.Update();
+            _playerController.Update();
         }
     }
 }
