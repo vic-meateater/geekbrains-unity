@@ -16,7 +16,7 @@ namespace MyPlatformer2D
 
         private float _jumpSpeed = 9f;
         private float _jumpTreshold = 1f;
-        private float _g = -9.8f;
+        private float _gravity = -9.8f;
         private float _groundLevel = 0.5f;
         private float _yVelocity = 0f;
 
@@ -53,8 +53,7 @@ namespace MyPlatformer2D
             }
             if (IsGrounded())
             {
-                //_playerAnimator.StartAnimation(_view._spriteRenderer, _isMoving ? AnimState.Walk : AnimState.Idle, true, _animationSpeed);
-                _playerAnimator.StartAnimation(_view._spriteRenderer, _isMoving ? AnimState.Walk : AnimState.Walk, true, _animationSpeed);
+                _playerAnimator.StartAnimation(_view._spriteRenderer, _isMoving ? AnimState.Walk : AnimState.Idle, true, _animationSpeed);
 
                 if(_isJump && _yVelocity <= 0)
                 {
@@ -72,10 +71,10 @@ namespace MyPlatformer2D
             {
                 if(Mathf.Abs(_yVelocity) > _jumpTreshold)
                 {
-                    _playerAnimator.StartAnimation(_view._spriteRenderer, AnimState.Walk, true, _animationSpeed);
+                    _playerAnimator.StartAnimation(_view._spriteRenderer, AnimState.Jump, true, _animationSpeed);
                 }
 
-                _yVelocity += _g * Time.deltaTime;
+                _yVelocity += _gravity * Time.deltaTime;
                 _view._transform.position += Vector3.up * (Time.deltaTime * _yVelocity);
             }
         }

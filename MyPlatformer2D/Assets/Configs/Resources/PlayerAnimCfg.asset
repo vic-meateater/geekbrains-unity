@@ -14,12 +14,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sequences:
   - Track: 0
-    Sprites: []
+    Sprites:
+    - {fileID: -694242508, guid: f9ce12747dd8ffb4ebe5f14ab04f32b1, type: 3}
+    - {fileID: 414479049, guid: f9ce12747dd8ffb4ebe5f14ab04f32b1, type: 3}
+    - {fileID: 538135446, guid: f9ce12747dd8ffb4ebe5f14ab04f32b1, type: 3}
+    - {fileID: -1920957883, guid: f9ce12747dd8ffb4ebe5f14ab04f32b1, type: 3}
+    - {fileID: -1179396737, guid: f9ce12747dd8ffb4ebe5f14ab04f32b1, type: 3}
+    - {fileID: 1096840179, guid: f9ce12747dd8ffb4ebe5f14ab04f32b1, type: 3}
+    - {fileID: 966960060, guid: f9ce12747dd8ffb4ebe5f14ab04f32b1, type: 3}
+    - {fileID: -1091299706, guid: f9ce12747dd8ffb4ebe5f14ab04f32b1, type: 3}
+    - {fileID: 1096349713, guid: f9ce12747dd8ffb4ebe5f14ab04f32b1, type: 3}
+    - {fileID: -1411121850, guid: f9ce12747dd8ffb4ebe5f14ab04f32b1, type: 3}
+    - {fileID: 474218249, guid: f9ce12747dd8ffb4ebe5f14ab04f32b1, type: 3}
   - Track: 1
     Sprites:
-    - {fileID: -1131658621, guid: 93501d84cdac99c4da439360534b4a08, type: 3}
-    - {fileID: -1419444588, guid: 93501d84cdac99c4da439360534b4a08, type: 3}
-    - {fileID: -1639900718, guid: 93501d84cdac99c4da439360534b4a08, type: 3}
-    - {fileID: 986710827, guid: 93501d84cdac99c4da439360534b4a08, type: 3}
+    - {fileID: 21300000, guid: 29ad5d5f2cee0114884952cc2730fb66, type: 3}
+    - {fileID: 21300002, guid: 29ad5d5f2cee0114884952cc2730fb66, type: 3}
+    - {fileID: 21300004, guid: 29ad5d5f2cee0114884952cc2730fb66, type: 3}
+    - {fileID: 21300006, guid: 29ad5d5f2cee0114884952cc2730fb66, type: 3}
+    - {fileID: 21300008, guid: 29ad5d5f2cee0114884952cc2730fb66, type: 3}
+    - {fileID: 21300010, guid: 29ad5d5f2cee0114884952cc2730fb66, type: 3}
+    - {fileID: 21300012, guid: 29ad5d5f2cee0114884952cc2730fb66, type: 3}
+    - {fileID: 21300014, guid: 29ad5d5f2cee0114884952cc2730fb66, type: 3}
+    - {fileID: 21300016, guid: 29ad5d5f2cee0114884952cc2730fb66, type: 3}
+    - {fileID: 21300018, guid: 29ad5d5f2cee0114884952cc2730fb66, type: 3}
+    - {fileID: 21300020, guid: 29ad5d5f2cee0114884952cc2730fb66, type: 3}
+    - {fileID: 21300022, guid: 29ad5d5f2cee0114884952cc2730fb66, type: 3}
+    - {fileID: 21300024, guid: 29ad5d5f2cee0114884952cc2730fb66, type: 3}
+    - {fileID: 21300026, guid: 29ad5d5f2cee0114884952cc2730fb66, type: 3}
+    - {fileID: 21300028, guid: 29ad5d5f2cee0114884952cc2730fb66, type: 3}
+    - {fileID: 21300030, guid: 29ad5d5f2cee0114884952cc2730fb66, type: 3}
+    - {fileID: 21300032, guid: 29ad5d5f2cee0114884952cc2730fb66, type: 3}
+    - {fileID: 21300034, guid: 29ad5d5f2cee0114884952cc2730fb66, type: 3}
   - Track: 2
-    Sprites: []
+    Sprites:
+    - {fileID: 21300000, guid: ac275666a28f0fa40876859dbb51e5e1, type: 3}
