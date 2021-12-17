@@ -38,6 +38,7 @@ namespace MyPlatformer2D
             _xVelocity = Time.fixedDeltaTime * _walkSpeed * (_xAxisInput < 0 ? -1 : 1);
             //_view._transform.position += Vector3.right * (Time.deltaTime * _walkSpeed * (_xAxisInput < 0 ? -1 : 1));
             //_view._rigidbody.velocity = _view._rigidbody.velocity.Change();// Дописать
+            _view._rigidbody.velocity = _view._rigidbody.velocity.Change();
             _view._transform.localScale = _xAxisInput < 0 ? _leftScale : _rightScale;
         }
 
