@@ -16,7 +16,7 @@ namespace MyPlatformer2D
 
         private float _jumpSpeed = 6f;
         private float _jumpTreshold = 1f;
-        private float _gravity = -9.8f;
+        //private float _gravity = -9.8f;
         private float _groundLevel = 0.5f;
         private float _yVelocity = 0f;
         private float _xVelocity = 0f;

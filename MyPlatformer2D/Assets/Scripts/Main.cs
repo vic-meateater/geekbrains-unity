@@ -5,7 +5,7 @@ namespace MyPlatformer2D
     public class Main : MonoBehaviour
     {
         [SerializeField] private SpriteAnimatorConfig _playerConfig;
-        [SerializeField] private int _animationSpeed = 15;
+        //[SerializeField] private int _animationSpeed = 15;
         [SerializeField] private LevelObjectView _playerView;
         [SerializeField] private Transform _camera;
         [SerializeField] private Transform _background;
