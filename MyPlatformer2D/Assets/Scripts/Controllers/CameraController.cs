@@ -10,7 +10,7 @@ namespace MyPlatformer2D
         private Transform _playerTransform;
         private Transform _mCamTransform;
 
-        private float _camSpeed = 1.2f;
+        private float _camSpeed = .5f;
 
         private float X;
         private float Y;
@@ -34,11 +34,11 @@ namespace MyPlatformer2D
 
             if (_xAxisInput > 0)
             {
-                offsetX = 4;
+                offsetX = 3;
             }
             else if (_xAxisInput < 0)
             {
-                offsetX = -4;
+                offsetX = -3;
             }
             else
             {
@@ -46,11 +46,11 @@ namespace MyPlatformer2D
             }
             if (_yAxisVelocity > 0)
             {
-                offsetY = 4;
+                offsetY = 3;
             }
             else if (_yAxisVelocity < 0)
             {
-                offsetY = -4;
+                offsetY = -3;
             }
             else
             {

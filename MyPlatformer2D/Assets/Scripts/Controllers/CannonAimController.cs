@@ -18,7 +18,7 @@ namespace MyPlatformer2D
             _muzzleTransform = muzzTransform;
             _targetTransform = playerTransform;
         }
-        void Update()
+        public void Update()
         {
             _dir = _targetTransform.position - _muzzleTransform.position;
             _angle = Vector3.Angle(Vector3.down, _dir);

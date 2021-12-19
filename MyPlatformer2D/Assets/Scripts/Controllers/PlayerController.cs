@@ -8,13 +8,13 @@ namespace MyPlatformer2D
         private bool _isJump;
         private bool _isMoving;
 
-        private float _walkSpeed = 3f;
+        private float _walkSpeed = 170f;
         private float _animationSpeed = 10f;
         private float _movingTreshold = 0.1f;
         private Vector3 _leftScale = new Vector3(-1, 1, 1);
         private Vector3 _rightScale = new Vector3(1, 1, 1);
 
-        private float _jumpSpeed = 9f;
+        private float _jumpSpeed = 6f;
         private float _jumpTreshold = 1f;
         private float _gravity = -9.8f;
         private float _groundLevel = 0.5f;
@@ -36,9 +36,7 @@ namespace MyPlatformer2D
         private void MoveTowards()
         {
             _xVelocity = Time.fixedDeltaTime * _walkSpeed * (_xAxisInput < 0 ? -1 : 1);
-            //_view._transform.position += Vector3.right * (Time.deltaTime * _walkSpeed * (_xAxisInput < 0 ? -1 : 1));
-            //_view._rigidbody.velocity = _view._rigidbody.velocity.Change();// Дописать
-            _view._rigidbody.velocity = _view._rigidbody.velocity.Change();
+            _view._rigidbody.velocity = _view._rigidbody.velocity.Change(x: _xVelocity);
             _view._transform.localScale = _xAxisInput < 0 ? _leftScale : _rightScale;
         }
 
@@ -66,13 +64,6 @@ namespace MyPlatformer2D
                 {
                     _view._rigidbody.AddForce(Vector2.up * _jumpSpeed, ForceMode2D.Impulse);
                 }
-                //else if (_yVelocity < 0)
-                //{
-                //    _yVelocity = 0f;
-
-                //    _view.transform.position = _view._transform.position.Change(y: _groundLevel);
-
-                //}
             }
             else
             {
