@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace MyPlatformer2D
 {
-    public class BulletEmitterController : MonoBehaviour
+    public class BulletEmitterController //: MonoBehaviour
     {
         private List<BulletController> _bullets = new List<BulletController>();
         private Transform _transform;

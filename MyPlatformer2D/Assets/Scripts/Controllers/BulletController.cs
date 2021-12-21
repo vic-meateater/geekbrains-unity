@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace MyPlatformer2D
 {
-    public class BulletController : MonoBehaviour
+    public class BulletController //: MonoBehaviour
     {
         private Vector3 _velocity;
 

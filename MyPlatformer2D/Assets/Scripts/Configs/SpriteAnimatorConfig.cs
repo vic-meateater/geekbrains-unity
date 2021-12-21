@@ -8,7 +8,8 @@ namespace MyPlatformer2D
     {
         Idle = 0,
         Walk = 1,
-        Jump = 2
+        Jump = 2,
+        Fly = 3
     }
     
     [CreateAssetMenu(fileName = "SpriteAnimationCfg", menuName = "Configs / Animation", order = 1)]
@@ -18,8 +19,8 @@ namespace MyPlatformer2D
         public sealed class SpriteSequence
         {
             public AnimState Track;
-            public List<Sprite> Sprites = new List<Sprite>();
+            public List<Sprite> Sprites = new();
         }
-        public List<SpriteSequence> Sequences = new List<SpriteSequence>();
+        public List<SpriteSequence> Sequences = new();
     }
 }

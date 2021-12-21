@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace MyPlatformer2D
 {
-    public class ContactPooler : MonoBehaviour
+    public class ContactPooler
     {
         private ContactPoint2D[] _contacts = new ContactPoint2D[10];
 

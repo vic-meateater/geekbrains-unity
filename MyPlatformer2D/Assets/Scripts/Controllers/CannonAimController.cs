@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace MyPlatformer2D
 {
-    public class CannonAimController : MonoBehaviour
+    public class CannonAimController //: MonoBehaviour
     {
         private Transform _muzzleTransform;
         private Transform _targetTransform;

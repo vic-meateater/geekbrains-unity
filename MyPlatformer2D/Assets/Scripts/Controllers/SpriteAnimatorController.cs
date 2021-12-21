@@ -42,11 +42,11 @@ namespace MyPlatformer2D
         private SpriteAnimatorConfig _config;
         private Dictionary<SpriteRenderer, Animation> _activeAnimation = new();
 
-        public SpriteAnimatorController(SpriteAnimatorConfig config)
+        public SpriteAnimatorController(SpriteAnimatorConfig spriteConfig)
         {
-            _config = config;
+            _config = spriteConfig;
         }
-
+        
         public void StartAnimation(SpriteRenderer spriteRenderer, AnimState track, bool loop, float speed)
         {
             if (_activeAnimation.TryGetValue(spriteRenderer, out var animation))

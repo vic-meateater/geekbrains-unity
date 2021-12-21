@@ -5,19 +5,23 @@ namespace MyPlatformer2D
     public class Main : MonoBehaviour
     {
         [SerializeField] private SpriteAnimatorConfig _playerConfig;
-        //[SerializeField] private int _animationSpeed = 15;
         [SerializeField] private LevelObjectView _playerView;
+        [SerializeField] private SpriteAnimatorConfig _coinConfig;
+        [SerializeField] private LevelObjectView _coinView;
         [SerializeField] private Transform _camera;
         [SerializeField] private Transform _background;
         [SerializeField] private CannonView _cannonView;
 
 
         private SpriteAnimatorController _playerAnimator;
+        private SpriteAnimatorController _coinAnimator;
         private PlayerController _playerController;
         private ParalaxManager _paralaxManager;
         private CameraController _cameraController;
         private CannonAimController _cannon;
-        public BulletEmitterController _bulletEmitterController;
+        private BulletEmitterController _bulletEmitterController;
+        private CoinController _coinController;
+        
 
 
         void Start()
@@ -25,6 +29,10 @@ namespace MyPlatformer2D
             _playerConfig = Resources.Load<SpriteAnimatorConfig>("PlayerAnimCfg");
             _playerAnimator = new SpriteAnimatorController(_playerConfig);
             _playerController = new PlayerController(_playerView, _playerAnimator);
+            _coinConfig = Resources.Load<SpriteAnimatorConfig>("CoinAnimCfg");
+            _coinAnimator = new SpriteAnimatorController(_coinConfig);
+            _coinController = new CoinController(_coinView, _coinAnimator);
+            
             _paralaxManager = new ParalaxManager(_camera, _background);
             _cameraController = new CameraController(_playerView, Camera.main.transform);
             _cannon = new CannonAimController(_cannonView._muzzleTransform, _playerView.transform);
@@ -38,6 +46,7 @@ namespace MyPlatformer2D
             _paralaxManager.Update();
             _cannon.Update();
             _bulletEmitterController.Update();
+            _coinController.Update();
         }
     }
 }
