@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace MyPlatformer2D
@@ -7,10 +8,11 @@ namespace MyPlatformer2D
         [SerializeField] private SpriteAnimatorConfig _playerConfig;
         [SerializeField] private LevelObjectView _playerView;
         [SerializeField] private SpriteAnimatorConfig _coinConfig;
-        [SerializeField] private LevelObjectView _coinView;
+        //[SerializeField] private LevelObjectView _coinView;
         [SerializeField] private Transform _camera;
         [SerializeField] private Transform _background;
         [SerializeField] private CannonView _cannonView;
+        [SerializeField] private List<LevelObjectView> _coinViews;
 
 
         private SpriteAnimatorController _playerAnimator;
@@ -31,7 +33,7 @@ namespace MyPlatformer2D
             _playerController = new PlayerController(_playerView, _playerAnimator);
             _coinConfig = Resources.Load<SpriteAnimatorConfig>("CoinAnimCfg");
             _coinAnimator = new SpriteAnimatorController(_coinConfig);
-            _coinController = new CoinController(_coinView, _coinAnimator);
+            _coinController = new CoinController(_playerView, _coinAnimator, _coinViews);
             
             _paralaxManager = new ParalaxManager(_camera, _background);
             _cameraController = new CameraController(_playerView, Camera.main.transform);
@@ -46,7 +48,8 @@ namespace MyPlatformer2D
             _paralaxManager.Update();
             _cannon.Update();
             _bulletEmitterController.Update();
-            _coinController.Update();
+            //_coinController.Update();
+            _coinAnimator.Update();
         }
     }
 }
