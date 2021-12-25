@@ -41,6 +41,9 @@ TagManager:
   - name: BackGround
     uniqueID: 3341610357
     locked: 0
+  - name: MidGround
+    uniqueID: 2197151787
+    locked: 0
   - name: MainSprites
     uniqueID: 1847321349
     locked: 0
