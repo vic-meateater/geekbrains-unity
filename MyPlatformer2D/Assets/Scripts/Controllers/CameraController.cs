@@ -31,14 +31,14 @@ namespace MyPlatformer2D
         {
             _xAxisInput = Input.GetAxis("Horizontal");
             _yAxisVelocity = _playerView._rigidbody.velocity.y;
-
+            /*
             if (_xAxisInput > 0)
             {
-                offsetX = 3;
+                offsetX = 1;
             }
             else if (_xAxisInput < 0)
             {
-                offsetX = -3;
+                offsetX = -1;
             }
             else
             {
@@ -55,7 +55,7 @@ namespace MyPlatformer2D
             else
             {
                 offsetY = 0;
-            }
+            }*/
             _mCamTransform.position = Vector3.Lerp(_mCamTransform.position,
                                                     new Vector3(X + offsetX, Y + offsetY, _mCamTransform.position.z),
                                                     Time.deltaTime * _camSpeed);

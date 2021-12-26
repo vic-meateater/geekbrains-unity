@@ -25,11 +25,6 @@ namespace MyPlatformer2D
                 _coinAnimator.StartAnimation(coinView._spriteRenderer, AnimState.Idle, true, _animationSpeed);
             }
         }
-
-        public void Update()
-        {
-            _coinAnimator.Update();
-        }
         private void OnLevelObjectContact(LevelObjectView contactView)
         {
             if (_coinViews.Contains(contactView))
@@ -37,6 +32,10 @@ namespace MyPlatformer2D
                 _coinAnimator.StopAnimation(contactView._spriteRenderer);
                 GameObject.Destroy(contactView.gameObject);
             }
+        }
+        public void Update()
+        {
+            _coinAnimator.Update();
         }
         public void Dispose()
         {
