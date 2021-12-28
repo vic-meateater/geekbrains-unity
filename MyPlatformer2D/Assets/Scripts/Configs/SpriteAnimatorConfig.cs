@@ -9,7 +9,8 @@ namespace MyPlatformer2D
         Idle = 0,
         Walk = 1,
         Jump = 2,
-        Fly = 3
+        Fly = 3,
+        Fire = 4
     }
     
     [CreateAssetMenu(fileName = "SpriteAnimationCfg", menuName = "Configs / Animation", order = 1)]
