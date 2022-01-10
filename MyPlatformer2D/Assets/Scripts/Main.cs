@@ -9,6 +9,7 @@ namespace MyPlatformer2D
         [SerializeField] private LevelObjectView _playerView;
         [SerializeField] private SpriteAnimatorConfig _coinConfig;
         [SerializeField] private SpriteAnimatorConfig _portalConfig;
+        [SerializeField] private SpriteAnimatorConfig _waterConfig;
         //[SerializeField] private LevelObjectView _coinView;
         [SerializeField] private Transform _camera;
         [SerializeField] private Transform _background;
@@ -18,11 +19,13 @@ namespace MyPlatformer2D
         [SerializeField] private List<LevelObjectView> _coinViews;
         [SerializeField] private Transform _startPoint;
         [SerializeField] private List<LevelObjectView> _returnPointsViews;
+        [SerializeField] private List<LevelObjectView> _waterPointsViews;
 
 
         private SpriteAnimatorController _playerAnimator;
         private SpriteAnimatorController _coinAnimator;
         private SpriteAnimatorController _portalAnimator;
+        private SpriteAnimatorController _waterAnimator;
         private PlayerController _playerController;
         private ParalaxManager _paralaxManager;
         private CameraController _cameraController;
@@ -30,6 +33,7 @@ namespace MyPlatformer2D
         private BulletEmitterController _bulletEmitterController;
         private CoinController _coinController;
         private PointsController _pointsController;
+        private LevelObjectAnimContoller _waterAnimContoller;
         
 
 
@@ -38,16 +42,25 @@ namespace MyPlatformer2D
             _playerConfig = Resources.Load<SpriteAnimatorConfig>("PlayerAnimCfg");
             _playerAnimator = new SpriteAnimatorController(_playerConfig);
             _playerController = new PlayerController(_playerView, _playerAnimator);
+
             _coinConfig = Resources.Load<SpriteAnimatorConfig>("CoinAnimCfg");
             _coinAnimator = new SpriteAnimatorController(_coinConfig);
             _coinController = new CoinController(_playerView, _coinAnimator, _coinViews);
+
             _portalConfig = Resources.Load<SpriteAnimatorConfig>("PortalAnimConfig");
             _portalAnimator = new SpriteAnimatorController(_portalConfig);
+
+            _waterConfig = Resources.Load<SpriteAnimatorConfig>("WaterAnimConfig");
+            _waterAnimator = new SpriteAnimatorController(_waterConfig);
+            _waterAnimContoller = new LevelObjectAnimContoller(_waterPointsViews, _waterAnimator);
+
             _pointsController = new PointsController(_playerView, _returnPointsViews, _startPoint, _portalAnimator);
             _paralaxManager = new ParalaxManager(_camera, _background, _midBackground, _frontBackground);
             _cameraController = new CameraController(_playerView, Camera.main.transform);
             _cannon = new CannonAimController(_cannonView._muzzleTransform, _playerView.transform);
             _bulletEmitterController = new BulletEmitterController(_cannonView._bullets, _cannonView._emitterTransform);
+
+
         }
 
         void Update()
@@ -60,6 +73,7 @@ namespace MyPlatformer2D
             _coinController.Update();
             //_coinAnimator.Update();
             _pointsController.Update();
+            _waterAnimContoller.Update();
         }
     }
 }
