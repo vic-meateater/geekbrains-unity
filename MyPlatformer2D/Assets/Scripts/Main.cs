@@ -20,6 +20,7 @@ namespace MyPlatformer2D
         [SerializeField] private Transform _startPoint;
         [SerializeField] private List<LevelObjectView> _returnPointsViews;
         [SerializeField] private List<LevelObjectView> _waterPointsViews;
+        [SerializeField] private GeneratorLevelView _generatorLevelView;
 
 
         private SpriteAnimatorController _playerAnimator;
@@ -34,6 +35,7 @@ namespace MyPlatformer2D
         private CoinController _coinController;
         private PointsController _pointsController;
         private LevelObjectAnimContoller _waterAnimContoller;
+        private GeneratorController _generatorController;
         
 
 
@@ -59,6 +61,9 @@ namespace MyPlatformer2D
             _cameraController = new CameraController(_playerView, Camera.main.transform);
             _cannon = new CannonAimController(_cannonView._muzzleTransform, _playerView.transform);
             _bulletEmitterController = new BulletEmitterController(_cannonView._bullets, _cannonView._emitterTransform);
+
+            _generatorController = new GeneratorController(_generatorLevelView);
+            _generatorController.Init();
 
 
         }
