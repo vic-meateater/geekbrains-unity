@@ -21,6 +21,8 @@ namespace MyPlatformer2D
         [SerializeField] private List<LevelObjectView> _returnPointsViews;
         [SerializeField] private List<LevelObjectView> _waterPointsViews;
         [SerializeField] private GeneratorLevelView _generatorLevelView;
+        [SerializeField] private QuestObjectView _singleQuestView;
+        [SerializeField] private QuestView _questView;
 
 
         private SpriteAnimatorController _playerAnimator;
@@ -36,10 +38,14 @@ namespace MyPlatformer2D
         private PointsController _pointsController;
         private LevelObjectAnimContoller _waterAnimContoller;
         private GeneratorController _generatorController;
+        private QuestConfiguratorController _questConfiguratorController;
+
+        //private QuestController _singleQuest;
+        //private CoinQuestModel _questModel;
         
 
 
-        void Start()
+        void Awake()
         {
             _playerConfig = Resources.Load<SpriteAnimatorConfig>("PlayerAnimCfg");
             _playerAnimator = new SpriteAnimatorController(_playerConfig);
@@ -64,6 +70,13 @@ namespace MyPlatformer2D
 
             _generatorController = new GeneratorController(_generatorLevelView);
             _generatorController.Init();
+
+            _questConfiguratorController = new QuestConfiguratorController(_questView);
+            _questConfiguratorController.Init();
+
+            // _questModel = new CoinQuestModel();
+            // _singleQuest = new QuestController(_singleQuestView, _questModel);
+            // _singleQuest.Reset();
 
 
         }

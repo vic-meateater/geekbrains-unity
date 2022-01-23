@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5693190285419586813}
   - component: {fileID: 5693190285419586812}
-  - component: {fileID: 5693190285419586803}
   - component: {fileID: 5693190285419586801}
-  m_Layer: 11
-  m_Name: Coin
+  - component: {fileID: -7962973388696478833}
+  m_Layer: 0
+  m_Name: Quest Coin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86,22 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5693190285419586803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5693190285419586800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 267a12b998e32994b88bd72963f671d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _transform: {fileID: 5693190285419586813}
-  _spriteRenderer: {fileID: 5693190285419586812}
-  _collider: {fileID: 5693190285419586801}
-  _rigidbody: {fileID: 0}
 --- !u!61 &5693190285419586801
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -128,3 +112,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-7962973388696478833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5693190285419586800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c832155e01e9ece42a6c8435318a412d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transform: {fileID: 5693190285419586813}
+  _spriteRenderer: {fileID: 5693190285419586812}
+  _collider: {fileID: 5693190285419586801}
+  _rigidbody: {fileID: 0}
+  _id: 0
+  _completedColor: {r: 0.5800776, g: 1, b: 0.24056602, a: 1}
+  _defaultColor: {r: 0, g: 0, b: 0, a: 0}
