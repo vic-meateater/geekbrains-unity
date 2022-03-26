@@ -34,10 +34,15 @@ namespace UserControlSystem
                 _healthSlider.minValue = 0;
                 _healthSlider.maxValue = selected.MaxHealth;
                 _healthSlider.value = selected.Health;
-                var color = Color.Lerp(Color.red, Color.green, selected.Health / (float)selected.MaxHealth);
+                Color color = Color.Lerp(Color.red, Color.green, selected.Health / (float)selected.MaxHealth);
                 _sliderBackground.color = color * 0.5f;
                 _sliderFillImage.color = color;
             }
+        }
+        
+        private void OnDestroy()
+        {
+            _selectedValue.OnSelected -= ONSelected;
         }
     }
 }

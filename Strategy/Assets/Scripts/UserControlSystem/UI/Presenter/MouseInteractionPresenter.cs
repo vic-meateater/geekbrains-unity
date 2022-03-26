@@ -14,7 +14,7 @@ public sealed class MouseInteractionPresenter : MonoBehaviour
         {
             return;
         }
-        var hits = Physics.RaycastAll(_camera.ScreenPointToRay(Input.mousePosition));
+        RaycastHit[] hits = Physics.RaycastAll(_camera.ScreenPointToRay(Input.mousePosition));
         if (hits.Length == 0)
         {
             return;
