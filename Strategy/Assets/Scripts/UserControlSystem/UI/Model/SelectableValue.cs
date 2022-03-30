@@ -2,7 +2,7 @@
 using Abstractions;
 using UnityEngine;
 
-namespace UserControlSystem
+namespace UserControlSystem.UI.Model
 {
     [CreateAssetMenu(
         fileName = nameof(SelectableValue), 
